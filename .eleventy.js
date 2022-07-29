@@ -24,7 +24,7 @@ module.exports = function(eleventyConfig) {
 
   //Filter
   eleventyConfig.addFilter("cssmin", function(code) {
-    if(process.env.NODE_ENV === "productiion") {
+    if(process.env.NODE_ENV === "production") {
       return new CleanCSS({}).minify(code).styles;
     }
     else {
@@ -35,7 +35,7 @@ module.exports = function(eleventyConfig) {
   //Transforms
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
     // Eleventy 1.0+: use this.inputPath and this.outputPath instead
-    if(process.env.NODE_ENV === "productiion" && this.outputPath && this.outputPath.endsWith(".html") ) {
+    if(process.env.NODE_ENV === "production" && this.outputPath && this.outputPath.endsWith(".html") ) {
       let minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,

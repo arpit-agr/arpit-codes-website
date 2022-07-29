@@ -18,7 +18,7 @@
 :root {
   --min-block-size: 100vh;
   --max-inline-size: min(90rem, 100vw);
-  --gutter: var(--space-xs-s);
+  --gutter: var(--space-s-m);
 }
 
 @supports (min-block-size: 100svh) {
@@ -34,6 +34,7 @@ body {
   padding: var(--gutter);
 
   /* background-image: var(--topography); */
+  background-color: var(--bg);
   color: var(--text);
   font-family: var(--font-plain);
   font-size: var(--step-0);
@@ -83,7 +84,7 @@ a:where(:hover, :focus) {
   inset-block-end: 0.2em;
 }
 
-@media screen and (min-width: 24.75em) {
+@media screen and (min-width: 25.3125em) {
   .hero p {
     inset-inline-end: 1em;
     inset-block-end: 3em;

@@ -1,9 +1,8 @@
 {
-  "name": "Example",
-  "description": "This domain is for use in illustrative examples in documents. You may use this domain in literature without prior coordination or asking for permission.",
-  "url": "https://example.com",
-  "themeColor": "#f8fbfc",
-  "colorScheme": "light dark",
-  "developerName": "Arpit Agrawal",
-  "developerLink": "arpit.agrawal2502@gmail.com"
+  "name": "Arpit Agrawal",
+  "description": "Personal site of Arpit Agrawal, Web Developer",
+  "url": "https://arpit.codes",
+  "themeColor": "#000000",
+  "colorScheme": "dark",
+  "email": "arpit.agrawal2502@gmail.com"
 }

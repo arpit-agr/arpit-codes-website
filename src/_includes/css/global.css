@@ -1,0 +1,97 @@
+/* font, underline */
+:root {
+  --font-plain: "pp_editorial_newregular", Georgia, "Times New Roman", serif;
+  --font-special: "pp_editorial_newitalic", Georgia, "Times New Roman", serif;
+  --letter-spacing-0: -0.015em;
+  --underline-thickness: 0.5em;
+  --underline-offset: 0.5em;
+}
+
+/* color */
+:root {
+  --bg: hsl(0deg 100% 1%);
+  --text: hsl(0deg 100% 99%);
+  --underline-color: hsl(0deg 0% 28%);
+}
+
+/* size and space */
+:root {
+  --min-block-size: 100vh;
+  --max-inline-size: min(90rem, 100vw);
+  --gutter: var(--space-xs-s);
+}
+
+@supports (min-block-size: 100svh) {
+  :root {
+    --min-block-size: 100svh;
+  }
+}
+
+body {
+  display: grid;
+  place-items: end;
+  min-block-size: var(--min-block-size);
+  padding: var(--gutter);
+
+  /* background-image: var(--topography); */
+  color: var(--text);
+  font-family: var(--font-plain);
+  font-size: var(--step-0);
+}
+
+h1 {
+  font-family: var(--font-special);
+  font-size: var(--step-4);
+  font-weight: 400;
+  line-height: 1em;
+  letter-spacing: var(--letter-spacing-0);
+}
+
+a {
+  display: inline-block;
+  color: var(--text);
+  text-decoration-line: none;
+  text-decoration-thickness: var(--underline-thickness);
+}
+
+a:where(:hover, :focus) {
+  text-decoration-line: underline;
+}
+
+:focus {
+  outline: calc(0.5 * var(--underline-thickness)) solid var(--underline-color);
+  outline-offset: calc(2 * var(--underline-offset));
+}
+
+/* hero section styles */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.hero a {
+  text-decoration-skip-ink: none;
+  text-underline-offset: calc(-1 * var(--underline-offset));
+  text-decoration-color: var(--underline-color);
+}
+
+.hero p {
+  position: absolute;
+  inset-inline-end: 0;
+  inset-block-end: 0.2em;
+}
+
+@media screen and (min-width: 24.75em) {
+  .hero p {
+    inset-inline-end: 1em;
+    inset-block-end: 3em;
+  }
+}
+@media screen and (max-width: 22.25em) {
+  .hero p {
+    position: static;
+    margin-top: 1em;
+  }
+}

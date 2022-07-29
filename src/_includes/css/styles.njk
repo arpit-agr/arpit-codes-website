@@ -1,6 +1,13 @@
 <!-- capture the CSS content as a Nunjucks variable -->
 {% set css %}
+  {% include "./font-face.css" %}
   {% include "./reset.css" %}
+  {% include "./skip-to-main-content.css" %}
+  {% include "./fluid-type.css" %}
+  {% include "./fluid-space.css" %}
+  {% include "./pattern.css" %}
+  {% include "./global.css" %}
+  {% include "./utilities.css" %}
 {% endset %}
 
 <style>{{ css | cssmin | safe }}</style>

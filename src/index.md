@@ -1,6 +1,6 @@
 ---
-title: Hello World
+title: Arpit Agrawal
 layout: "layouts/home.html"
 ---
 
-# {{ title }}
+Web Developer

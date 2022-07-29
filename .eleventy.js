@@ -6,24 +6,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.setQuietMode(true);
   eleventyConfig.addPlugin(directoryOutputPlugin);
 
-  //Transforms
-  eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
-    // Eleventy 1.0+: use this.inputPath and this.outputPath instead
-    if( this.outputPath && this.outputPath.endsWith(".html") ) {
-      let minified = htmlmin.minify(content, {
-        useShortDoctype: true,
-        removeComments: true,
-        collapseWhitespace: true,
-        collapseBooleanAttributes: true
-      });
-      return minified;
-    }
-
-    return content;
-  });
 
   //Passthrough copy
-  // eleventyConfig.addPassthroughCopy("./src/fonts");
+  eleventyConfig.addPassthroughCopy("./src/fonts");
 	// eleventyConfig.addPassthroughCopy("./src/images");
 	// eleventyConfig.addPassthroughCopy("./src/scripts");
   // eleventyConfig.addPassthroughCopy("./src/favicon.ico");
@@ -39,7 +24,28 @@ module.exports = function(eleventyConfig) {
 
   //Filter
   eleventyConfig.addFilter("cssmin", function(code) {
-    return new CleanCSS({}).minify(code).styles;
+    if(process.env.NODE_ENV === "productiion") {
+      return new CleanCSS({}).minify(code).styles;
+    }
+    else {
+      return code
+    }
+  });
+
+  //Transforms
+  eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
+    // Eleventy 1.0+: use this.inputPath and this.outputPath instead
+    if(process.env.NODE_ENV === "productiion" && this.outputPath && this.outputPath.endsWith(".html") ) {
+      let minified = htmlmin.minify(content, {
+        useShortDoctype: true,
+        removeComments: true,
+        collapseWhitespace: true,
+        collapseBooleanAttributes: true
+      });
+      return minified;
+    }
+
+    return content;
   });
 
   return {

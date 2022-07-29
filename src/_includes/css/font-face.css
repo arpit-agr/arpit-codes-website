@@ -1,0 +1,13 @@
+@font-face {
+  font-family: "pp_editorial_newitalic";
+  src: url("/fonts/ppeditorialnew-italic-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "pp_editorial_newregular";
+  src: url("/fonts/ppeditorialnew-regular-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}

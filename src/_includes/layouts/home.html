@@ -7,5 +7,8 @@
     </a>
     {{ content | safe }}
   </div>
-  {% image "./src/images/white-rose.png", "A white rose", "(min-width: 30em) 50vw, 100vw", "eager", "flower" %}
+  {% image image.link , image.alt, image.sizes, image.loading, image.class %}
+  <span class="vh">
+    <a href={{ credit.imageLink }}>Image</a> by <a href={{ credit.siteLink }}>{{ credit.site }}</a>
+  </span>
 {%- endblock -%}

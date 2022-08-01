@@ -3,15 +3,15 @@
   --font-plain: "pp_editorial_newregular", Georgia, "Times New Roman", serif;
   --font-special: "pp_editorial_newitalic", Georgia, "Times New Roman", serif;
   --letter-spacing-0: -0.015em;
-  --underline-thickness: 0.5em;
-  --underline-offset: 0.5em;
+  --underline-thickness: 0.15em;
+  --underline-offset: 0.15em;
 }
 
 /* color */
 :root {
   --bg: hsl(0deg 100% 1%);
   --text: hsl(0deg 100% 99%);
-  --underline-color: hsl(0deg 0% 28%);
+  --underline-color: var(--text);
 }
 
 /* size and space */
@@ -33,7 +33,6 @@ body {
   min-block-size: var(--min-block-size);
   padding: var(--gutter);
 
-  /* background-image: var(--topography); */
   background-color: var(--bg);
   color: var(--text);
   font-family: var(--font-plain);
@@ -70,12 +69,31 @@ a:where(:hover, :focus) {
   display: flex;
   flex-direction: column;
   position: relative;
+  gap: 1em;
 }
 
 .hero a {
-  text-decoration-skip-ink: none;
-  text-underline-offset: calc(-1 * var(--underline-offset));
-  text-decoration-color: var(--underline-color);
+  text-decoration: none;
+}
+
+.hero a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: var(--underline-thickness);
+  /* background: currentColor; */
+  background: var(--text);
+  top: 108%;
+  left: 0;
+  pointer-events: none;
+  transform-origin: 100% 50%;
+  transform: scale3d(0, 1, 1);
+  transition: transform 0.6s;
+}
+
+.hero a:hover::before {
+  transform-origin: 0% 50%;
+  transform: scale3d(1, 1, 1);
 }
 
 .hero p {
@@ -87,12 +105,22 @@ a:where(:hover, :focus) {
 @media screen and (min-width: 25.3125em) {
   .hero p {
     inset-inline-end: 1em;
-    inset-block-end: 3em;
+    inset-block-end: 2.8em;
   }
 }
 @media screen and (max-width: 22.25em) {
   .hero p {
     position: static;
-    margin-top: 1em;
   }
+}
+
+.flower {
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 300px;
+  height: auto;
+  max-inline-size: 50vw;
 }

@@ -1,0 +1,59 @@
+:root {
+  --gradient-hue: ;
+  --accent: hsl(var(--gradient-hue) 88% 60%);
+  --underline-color: var(--accent);
+}
+
+body {
+  --gradient-inner: hsl(var(--gradient-hue) 88% 60% / 43%);
+  background-color: var(--bg);
+  background-image: radial-gradient(
+    50% 50% at 50% 50%,
+    var(--gradient-inner),
+    var(--bg)
+  );
+  background-size: var(--step-10) var(--step-10);
+  background-position: center;
+  background-repeat: repeat-x;
+  background-repeat: no-repeat;
+}
+
+/* Check for Houdini support & register property */
+@supports (background: paint(something)) {
+  @property --gradient-hue {
+    syntax: "<number>";
+    inherits: true;
+    initial-value: 0;
+  }
+
+  /* body {
+    transition: --gradient-hue 8s linear;
+  }
+
+  body:hover {
+    --gradient-hue: 40;
+  } */
+
+  @keyframes gradient-hue {
+    0% {
+      --gradient-hue: 0;
+    }
+    50% {
+      --gradient-hue: 40;
+    }
+    100% {
+      --gradient-hue: 0;
+    }
+  }
+
+  body {
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-name: gradient-hue;
+    animation-iteration-count: infinite;
+  }
+}
+
+.hero a::before {
+  background: hsl(var(--gradient-hue) 88% 60%);
+}

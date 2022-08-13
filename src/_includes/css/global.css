@@ -5,12 +5,13 @@
 	--font-special: "pp_editorial_newitalic", Georgia, "Times New Roman", serif;
 	--letter-spacing-0: -0.015em;
 	--underline-thickness: 0.075em;
-	--underline-offset: 0.075em;
+	--underline-offset: var(--underline-thickness);
 }
 
 /* color */
 :root {
 	--bg: hsl(0deg 100% 1%);
+	--bg-hover: hsl(0deg 0% 16%);
 	--text: hsl(0deg 100% 99%);
 	--underline-color: var(--text);
 }
@@ -46,7 +47,7 @@ h1 {
 	letter-spacing: var(--letter-spacing-0);
 }
 
-a {
+:where(a) {
 	position: relative;
 	display: inline-block;
 	color: var(--text);
@@ -64,22 +65,10 @@ a {
 	outline-offset: calc(2 * var(--underline-offset));
 }
 
-a::before {
-	content: "";
-	position: absolute;
-	width: 100%;
-	height: var(--underline-thickness);
-	/* background: currentColor; */
-	background: var(--text);
-	top: 108%;
-	left: 0;
-	pointer-events: none;
-	transform-origin: 100% 50%;
-	transform: scale3d(0, 1, 1);
-	transition: transform 0.6s;
+:focus:not(:focus-visible) {
+	outline: none;
 }
 
-a:hover::before {
-	transform-origin: 0% 50%;
-	transform: scale3d(1, 1, 1);
+[tabindex="-1"]:focus {
+	outline: none;
 }

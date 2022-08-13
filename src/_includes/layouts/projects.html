@@ -1,11 +1,22 @@
 {%- extends "layouts/base.html" -%}
 
+{%- block bodyClass -%}
+  stack
+{%- endblock -%}
+
+{%- block mainClass -%}
+  stack
+{%- endblock -%}
+
 {%- block content -%}
-  {{ content | safe }}
-  <ol class="flow">
+  <div class="header cluster">
+    {{ content | safe }}
+    {% image image.link , image.alt, image.sizes, image.loading, image.class %}
+  </div>
+  <ol class="projects" role="list">
     {%- for project in collections.projects -%}
       <li>
-        <a href="{{ project.data.url }}">
+        <a class="cluster" href="{{ project.data.url }}">
           {{ project.data.title }}
         </a>
       </li>

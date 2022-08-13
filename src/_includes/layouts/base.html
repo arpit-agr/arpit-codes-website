@@ -10,15 +10,16 @@
   <!-- PRELOAD SCRIPTS AND FONTS-->
   <link rel="preload" href="/fonts/ppeditorialnew-italic-webfont.woff2" as="font" type="font/woff2" crossorigin="">
   <link rel="preload" href="/fonts/ppeditorialnew-regular-webfont.woff2" as="font" type="font/woff2" crossorigin="">
+  {%- block preload -%}{%- endblock -%}
   <!-- NAMED BLOCK TO INJECT ELEMENTS FROM LAYOUT FILES -->
   {%- block injectHead -%}{%- endblock -%}
   <!-- META INFORMATION -->
   {%- include "partials/meta.html" -%}
 </head>
-<body class="wrapper">
+<body class="{%- block bodyClass -%}{%- endblock %} wrapper">
   <!-- <a href="#main" class="skip-to-main">Skip to content</a> -->
   <!-- <header class="site-head"></header> -->
-  <main id="main" tabindex="-1">
+  <main class="{%- block mainClass -%}{%- endblock %}" id="main" tabindex="-1">
     {%- block content -%}
       This page is under maintenance.
     {%- endblock -%}

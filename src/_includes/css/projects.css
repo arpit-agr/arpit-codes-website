@@ -1,9 +1,4 @@
-body {
-	--stack-gap: 0;
-}
-
 main {
-	flex-grow: 1;
 	inline-size: 100%;
 	--stack-horizontal-alignment: space-between;
 	--stack-vertical-alignment: space-between;

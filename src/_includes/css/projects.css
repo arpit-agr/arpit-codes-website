@@ -19,6 +19,7 @@ main {
 	/* inline-size: max(414px, var(--step-9)); */
 	inline-size: var(--step-9);
 	block-size: auto;
+	transform: rotate(-2deg);
 }
 
 .projects li + li {
@@ -29,6 +30,7 @@ main {
 	--cluster-horizontal-alignment: space-between;
 	padding-block: var(--space-3xs-2xs);
 	padding-inline: calc(var(--space-3xs-2xs) / 2);
+	text-decoration-line: none;
 }
 
 .projects a:after {

@@ -2,16 +2,28 @@
 
 body {
 	display: grid;
-	place-items: end;
+	grid-template-rows: auto 1fr;
+	gap: var(--space-l-xl);
+}
+
+main {
+	--stack-horizontal-alignment: center;
+	--stack-vertical-alignment: space-between;
+}
+
+nav {
+	--cluster-horizontal-alignment: space-between;
 }
 
 .hero {
 	--stack-gap: 1em;
+	--stack-horizontal-alignment: flex-start;
+	align-self: flex-end;
 	position: relative;
 }
 
 .hero a {
-	--underline-thickness: 0.15em;
+	--underline-thickness: 0.0375em;
 }
 
 .hero p {
@@ -34,33 +46,9 @@ body {
 	}
 }
 
-.flower {
-	position: absolute;
-	inset-block-start: 50%;
-	inset-inline-start: 50%;
-	transform: translate(-50%, -50%);
+.hero-img {
+	transform: rotate(-2deg);
 
-	inline-size: 300px;
+	inline-size: var(--step-10);
 	block-size: auto;
-	max-inline-size: 50vw;
-}
-
-.hero a::before {
-	content: "";
-	position: absolute;
-	inline-size: 100%;
-	block-size: var(--underline-thickness);
-	/* background: currentColor; */
-	background: var(--text);
-	inset-block-start: 108%;
-	inset-inline-start: 0;
-	pointer-events: none;
-	transform-origin: 100% 50%;
-	transform: scale3d(0, 1, 1);
-	transition: transform 0.6s;
-}
-
-.hero a:hover::before {
-	transform-origin: 0% 50%;
-	transform: scale3d(1, 1, 1);
 }

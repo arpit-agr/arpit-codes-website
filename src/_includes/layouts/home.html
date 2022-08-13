@@ -1,14 +1,25 @@
 {%- extends "layouts/base.html" -%}
 
+{%- block mainClass -%}
+  stack
+{%- endblock %} 
+
+{%- block header -%}
+  <header class="site-head">
+    <nav class="cluster">
+      <a class="btn step--1" href="/projects" title="View my projects">
+        My projects
+      </a>
+      <a class="btn step--1" href="mailto:{{ site.email }}">
+        Get in touch
+      </a>
+    </nav>
+  </header>
+{%- endblock %} 
+
 {%- block content -%}
-  <div class="hero stack">
-    <a href="mailto:{{ site.email }}">
-      <h1>{{ title }}</h1>
-    </a>
+  {% image image.link , image.alt, image.sizes, image.loading, image.class %}<div class="hero stack">
+    <h1>{{ title }}</h1>
     {{ content | safe }}
   </div>
-  {% image image.link , image.alt, image.sizes, image.loading, image.class %}
-  <span class="vh">
-    <a href={{ credit.imageLink }}>Image</a> by <a href={{ credit.siteLink }}>{{ credit.site }}</a>
-  </span>
 {%- endblock -%}

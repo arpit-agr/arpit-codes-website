@@ -2,15 +2,15 @@
 title: Arpit Agrawal
 layout: "layouts/home.html"
 image:
-  link: "./src/images/white-rose.png"
-  alt: "A white rose"
+  link: "./src/images/abbey-mussorie.png"
+  alt: "The abbey and hills from near Mussoorie"
   sizes: "(min-width: 30em) 50vw, 100vw"
   loading: "eager"
-  class: "flower"
+  class: "hero-img"
 credit:
-  imageLink: "https://www.rawpixel.com/image/6184835"
-  site: "rawpixel.com"
-  siteLink: "https://www.rawpixel.com/"
+  imageLink: ""
+  site: ""
+  siteLink: ""
 ---
 
 Web Developer

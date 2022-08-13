@@ -36,3 +36,9 @@
 	justify-content: var(--stack-vertical-alignment, flex-start);
 	align-items: var(--stack-horizontal-alignment, flex-start);
 }
+
+.step--1 {
+	font-size: var(--step--1);
+	text-transform: uppercase;
+	letter-spacing: var(--letter-spacing-1);
+}

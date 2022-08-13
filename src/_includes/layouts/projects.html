@@ -1,0 +1,14 @@
+{%- extends "layouts/base.html" -%}
+
+{%- block content -%}
+  {{ content | safe }}
+  <ol class="flow">
+    {%- for project in collections.projects -%}
+      <li>
+        <a href="{{ project.data.url }}">
+          {{ project.data.title }}
+        </a>
+      </li>
+    {%- endfor -%}
+  </ol>
+{%- endblock -%}

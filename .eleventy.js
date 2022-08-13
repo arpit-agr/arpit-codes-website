@@ -2,6 +2,7 @@ const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
 const htmlmin = require("html-minifier");
 const CleanCSS = require("clean-css");
 const imageShortcode = require("./src/_11ty/shortcodes/image");
+const sortByDisplayOrder = require('./src/_11ty/utils/sort-by-display-order.js');
 
 
 module.exports = function(eleventyConfig) {
@@ -51,6 +52,11 @@ module.exports = function(eleventyConfig) {
 
     return content;
   });
+
+  // COLLECTIONS
+	eleventyConfig.addCollection("projects", function(collectionApi) {
+		return sortByDisplayOrder(collectionApi.getFilteredByGlob("./src/projects/*.md"));
+	});
 
   return {
     // dataTemplateEngine: "njk",

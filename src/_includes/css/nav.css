@@ -1,0 +1,10 @@
+nav {
+	--cluster-gap: 0;
+	--cluster-horizontal-alignment: space-between;
+	border-block-end: var(--underline-thickness) dotted;
+	color: var(--text-secondary);
+}
+
+nav > :nth-child(2) {
+	margin-inline-start: auto;
+}

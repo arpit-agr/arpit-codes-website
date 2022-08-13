@@ -16,16 +16,19 @@
   <!-- META INFORMATION -->
   {%- include "partials/meta.html" -%}
 </head>
-<body class="{%- block bodyClass -%}{%- endblock %} wrapper">
-  <!-- <a href="#main" class="skip-to-main">Skip to content</a> -->
-  <!-- <header class="site-head"></header> -->
-  {%- block header -%}{%- endblock %}
+<body class="wrapper">
+  <a href="#main" class="skip-to-main step--1">Skip to content</a>
+  <header class="site-head">
+    {% include "partials/nav.html" %}
+  </header>
   <main class="{%- block mainClass -%}{%- endblock %}" id="main" tabindex="-1">
     {%- block content -%}
       This page is under maintenance.
     {%- endblock -%}
   </main>
-  <!-- <footer role="contentinfo"></footer> -->
+  <footer role="contentinfo">
+    {% include "partials/footer.html" %}
+  </footer>
   {%- block bodyScripts -%}{%- endblock -%}
 </body>
 </html>

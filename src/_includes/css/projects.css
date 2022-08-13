@@ -36,7 +36,3 @@ main {
 .projects a:after {
 	content: "→";
 }
-
-.projects a:where(:hover, :focus) {
-	background-color: var(--bg-hover);
-}

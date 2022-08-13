@@ -1,18 +1,8 @@
 /* home page styles */
 
-body {
-	display: grid;
-	grid-template-rows: auto 1fr;
-	gap: var(--space-l-xl);
-}
-
 main {
 	--stack-horizontal-alignment: center;
 	--stack-vertical-alignment: space-between;
-}
-
-nav {
-	--cluster-horizontal-alignment: space-between;
 }
 
 .hero {

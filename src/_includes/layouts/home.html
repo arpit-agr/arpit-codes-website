@@ -4,19 +4,6 @@
   stack
 {%- endblock %} 
 
-{%- block header -%}
-  <header class="site-head">
-    <nav class="cluster">
-      <a class="btn step--1" href="/projects" title="View my projects">
-        My projects
-      </a>
-      <a class="btn step--1" href="mailto:{{ site.email }}">
-        Get in touch
-      </a>
-    </nav>
-  </header>
-{%- endblock %} 
-
 {%- block content -%}
   {% image image.link , image.alt, image.sizes, image.loading, image.class %}<div class="hero stack">
     <h1>{{ title }}</h1>

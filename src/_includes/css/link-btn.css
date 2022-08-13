@@ -2,11 +2,10 @@
 
 .btn {
 	position: relative;
-	padding: var(--space-3xs-2xs) var(--space-2xs-xs);
-	background-color: var(--bg-hover);
+	padding: var(--space-2xs-xs);
 }
 
-.btn::before {
+/* .btn::before {
 	content: "";
 	position: absolute;
 	inline-size: 100%;
@@ -23,4 +22,4 @@
 .btn:hover::before {
 	transform-origin: 0% 50%;
 	transform: scale3d(1, 1, 1);
-}
+} */

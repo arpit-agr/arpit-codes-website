@@ -1,0 +1,6 @@
+footer {
+	--flow-space: 0;
+	padding-block: var(--space-2xs-xs);
+	border-block-start: var(--underline-thickness) dotted;
+	color: var(--text-secondary);
+}

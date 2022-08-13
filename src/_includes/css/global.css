@@ -13,7 +13,8 @@
 :root {
 	--bg: hsl(0deg 0% 1%);
 	--bg-hover: hsl(0deg 0% 16%);
-	--text: hsl(0deg 100% 99%);
+	--text: hsl(0deg 0% 99%);
+	--text-secondary: hsl(0deg 0% 80%);
 	--underline-color: var(--text);
 }
 
@@ -32,12 +33,22 @@
 
 body {
 	min-block-size: var(--min-block-size);
-	padding: var(--gutter);
 
 	background-color: var(--bg);
 	color: var(--text);
 	font-family: var(--font-plain);
 	font-size: var(--step-0);
+}
+
+body {
+	--grid-gap: 0;
+	display: grid;
+	grid-template-rows: auto 1fr;
+	gap: var(--grid-gap);
+}
+
+main {
+	margin-block-start: var(--gutter);
 }
 
 h1 {
@@ -50,16 +61,17 @@ h1 {
 
 :where(a) {
 	display: inline-block;
-	color: var(--text);
+	color: inherit;
 	text-decoration-line: underline;
 	/* text-decoration-thickness: var(--underline-thickness);
 	text-underline-offset: var(--underline-offset); */
 	text-decoration: none;
 }
-/* 
+
 a:where(:hover, :focus) {
-	text-decoration-line: underline;
-} */
+	color: var(--text);
+	background-color: var(--bg-hover);
+}
 
 :focus {
 	outline: calc(0.5 * var(--underline-thickness)) solid var(--underline-color);

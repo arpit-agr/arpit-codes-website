@@ -1,0 +1,44 @@
+/* home page styles */
+
+body {
+	display: grid;
+	place-items: end;
+}
+
+.hero {
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	gap: 1em;
+}
+
+.hero p {
+	position: absolute;
+	inset-inline-end: 0;
+	inset-block-end: 0.2em;
+	font-size: var(--step-0);
+	font-family: var(--font-special);
+}
+
+@media screen and (min-width: 25.3125em) {
+	.hero p {
+		inset-inline-end: 1em;
+		inset-block-end: 2.8em;
+	}
+}
+@media screen and (max-width: 22.25em) {
+	.hero p {
+		position: static;
+	}
+}
+
+.flower {
+	position: absolute;
+	inset-block-start: 50%;
+	inset-inline-start: 50%;
+	transform: translate(-50%, -50%);
+
+	width: 300px;
+	height: auto;
+	max-inline-size: 50vw;
+}

@@ -7,6 +7,9 @@
   {% include "./fluid-space.css" %}
   {% include "./pattern.css" %}
   {% include "./global.css" %}
+  {% if layout == "layouts/home.html" %}
+    {% include "./home.css" %}
+  {% endif %}
   {# {% include "./at-property.css" %} #}
   {% include "./utilities.css" %}
 {% endset %}

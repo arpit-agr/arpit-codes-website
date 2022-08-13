@@ -1,10 +1,11 @@
 /* font, underline */
 :root {
-  --font-plain: "pp_editorial_newregular", Georgia, "Times New Roman", serif;
+	--font-plain: -apple-system, BlinkMacSystemFont, helvetica neue, helvetica,
+		segoe ui, roboto, arial, sans-serif;
   --font-special: "pp_editorial_newitalic", Georgia, "Times New Roman", serif;
   --letter-spacing-0: -0.015em;
-  --underline-thickness: 0.15em;
-  --underline-offset: 0.15em;
+	--underline-thickness: 0.075em;
+	--underline-offset: 0.075em;
 }
 
 /* color */

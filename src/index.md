@@ -2,8 +2,8 @@
 title: Arpit Agrawal
 layout: "layouts/home.html"
 image:
-  link: "./src/images/abbey-mussorie.png"
-  alt: "The abbey and hills from near Mussoorie"
+  link: "./src/images/qutub-minar.png"
+  alt: "An illustration of the Qutub Minar, a five-story tapered minaret located in Delhi, India."
   sizes: "(min-width: 30em) 50vw, 100vw"
   loading: "eager"
   class: "hero-img"

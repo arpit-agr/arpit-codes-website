@@ -5,39 +5,24 @@ main {
 	--stack-vertical-alignment: space-between;
 }
 
-.hero {
-	--stack-gap: 1em;
-	--stack-horizontal-alignment: flex-start;
-	align-self: flex-end;
-	position: relative;
-}
-
-.hero a {
-	--underline-thickness: 0.0375em;
-}
-
-.hero p {
-	position: absolute;
-	inset-inline-end: 0;
-	inset-block-end: 0.2em;
-	font-family: var(--font-special);
-}
-
-@media screen and (min-width: 26.8125em) {
-	.hero p {
-		inset-inline-end: 1em;
-		inset-block-end: 2.8em;
-	}
-}
-@media screen and (max-width: 23.375em) {
-	.hero p {
-		position: static;
-	}
+picture {
+	flex-grow: 1;
+	/* vertically center the img in the picture element */
+	display: flex;
+	align-items: center;
 }
 
 .hero-img {
 	inline-size: var(--step-10);
 	block-size: auto;
-	max-block-size: 64vh;
+	max-block-size: 68vh;
 	object-fit: contain;
+}
+
+#logo {
+	align-self: flex-end;
+	inline-size: var(--step-10);
+	block-size: auto;
+
+	max-inline-size: calc(100vw - (2 * var(--gutter)));
 }

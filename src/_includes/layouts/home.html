@@ -6,9 +6,11 @@
 
 {%- block content -%}
   {% image image.link , image.alt, image.sizes, image.loading, image.class %}
-  {% include "partials/filter.html" %}
-  <div class="hero stack">
+  <div class="vh">
     <h1>{{ title }}</h1>
-    {{ content | safe }}
+    <p>{{ subtitle }}</p>
   </div>
+  {% include "snippets/logo.html" %}
+  {{ content | safe }}
+  {% include "partials/filter.html" %}
 {%- endblock -%}

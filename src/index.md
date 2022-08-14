@@ -1,5 +1,6 @@
 ---
-title: Arpit Agrawal
+title: "Arpit Agrawal"
+subtitle: "Web Developer"
 layout: "layouts/home.html"
 image:
   link: "./src/images/qutub-minar.png"
@@ -12,5 +13,3 @@ credit:
   site: "Old Book Illustrations"
   siteLink: "https://www.oldbookillustrations.com/"
 ---
-
-Web Developer

@@ -1,5 +1,5 @@
 ---
-title: Projects
+title: "Projects"
 layout: "layouts/projects.html"
 image:
   link: "./src/images/painter.png"

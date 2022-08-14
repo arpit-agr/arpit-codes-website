@@ -37,8 +37,6 @@ main {
 }
 
 .hero-img {
-	transform: rotate(-2deg);
-
 	inline-size: var(--step-10);
 	block-size: auto;
 	max-block-size: 64vh;

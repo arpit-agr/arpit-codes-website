@@ -6,7 +6,9 @@
 
 {%- block content -%}
   <!-- TODO: svg image effects -->
-  {% image image.link , image.alt, image.sizes, image.loading, image.class %}<div class="hero stack">
+  {% image image.link , image.alt, image.sizes, image.loading, image.class %}
+  {% include "partials/filter.html" %}
+  <div class="hero stack">
     <h1>{{ title }}</h1>
     {{ content | safe }}
   </div>

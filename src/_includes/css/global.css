@@ -74,6 +74,15 @@ a:where(:hover, :focus) {
 	background-color: var(--bg-hover);
 }
 
+img {
+	transform: rotate(-2deg);
+}
+
+img:where(:hover, :focus) {
+	filter: url(#noise);
+	transform: translate(-5px, -5px);
+}
+
 :focus {
 	outline: calc(0.5 * var(--underline-thickness)) solid var(--underline-color);
 	outline-offset: calc(2 * var(--underline-offset));

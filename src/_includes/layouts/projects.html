@@ -8,6 +8,7 @@
   <div class="header cluster">
     {{ content | safe }}
     {% image image.link , image.alt, image.sizes, image.loading, image.class %}
+    {% include "partials/filter.html" %}
   </div>
   <ol class="projects" role="list">
     {%- for project in collections.projects -%}

@@ -1,5 +1,6 @@
 ---
 title: "Projects"
+subtitle: "(more to come)"
 layout: "layouts/projects.html"
 image:
   link: "./src/images/painter.png"
@@ -12,5 +13,3 @@ credit:
   site: "Old Book Illustrations"
   siteLink: "https://www.oldbookillustrations.com/"
 ---
-
-# {{ title }}

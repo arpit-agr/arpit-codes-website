@@ -6,7 +6,7 @@
 
 {%- block content -%}
   <div class="header cluster">
-    {{ content | safe }}
+    <h1>{{ title }}</h1>
     {% image image.link , image.alt, image.sizes, image.loading, image.class %}
   </div>
   <ol class="projects" role="list">
@@ -18,5 +18,6 @@
       </li>
     {%- endfor -%}
   </ol>
+  {{ content | safe }}
   {% include "partials/filter.html" %}
 {%- endblock -%}

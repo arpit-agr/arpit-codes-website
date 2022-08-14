@@ -41,4 +41,6 @@ main {
 
 	inline-size: var(--step-10);
 	block-size: auto;
+	max-block-size: 64vh;
+	object-fit: contain;
 }

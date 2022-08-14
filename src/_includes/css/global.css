@@ -80,7 +80,7 @@ img {
 
 img:where(:hover, :focus) {
 	filter: url(#noise);
-	transform: translate(-5px, -5px);
+	transform: rotate(-2deg) translate(-5px, -5px);
 }
 
 :focus {

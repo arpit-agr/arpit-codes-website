@@ -8,9 +8,9 @@ image:
   loading: "eager"
   class: "hero-img"
 credit:
-  imageLink: ""
-  site: ""
-  siteLink: ""
+  imageLink: "https://www.oldbookillustrations.com/illustrations/qutub-minar/"
+  site: "Old Book Illustrations"
+  siteLink: "https://www.oldbookillustrations.com/"
 ---
 
 Web Developer

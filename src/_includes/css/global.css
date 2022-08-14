@@ -49,7 +49,7 @@ body {
 
 main {
 	--stack-gap: var(--space-l-xl);
-	margin-block-start: var(--gutter);
+	margin-block: var(--gutter);
 }
 
 h1 {

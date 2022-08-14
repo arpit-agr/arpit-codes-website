@@ -20,17 +20,16 @@ main {
 	position: absolute;
 	inset-inline-end: 0;
 	inset-block-end: 0.2em;
-	font-size: var(--step-0);
 	font-family: var(--font-special);
 }
 
-@media screen and (min-width: 25.3125em) {
+@media screen and (min-width: 26.8125em) {
 	.hero p {
 		inset-inline-end: 1em;
 		inset-block-end: 2.8em;
 	}
 }
-@media screen and (max-width: 22.25em) {
+@media screen and (max-width: 23.375em) {
 	.hero p {
 		position: static;
 	}

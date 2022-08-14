@@ -3,11 +3,14 @@ const htmlmin = require("html-minifier");
 const CleanCSS = require("clean-css");
 const imageShortcode = require("./src/_11ty/shortcodes/image");
 const sortByDisplayOrder = require('./src/_11ty/utils/sort-by-display-order.js');
-
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setQuietMode(true);
+
+  //Plugins
   eleventyConfig.addPlugin(directoryOutputPlugin);
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   //Passthrough copy
   eleventyConfig.addPassthroughCopy("./src/fonts");
@@ -56,6 +59,9 @@ module.exports = function(eleventyConfig) {
   // COLLECTIONS
 	eleventyConfig.addCollection("projects", function(collectionApi) {
 		return sortByDisplayOrder(collectionApi.getFilteredByGlob("./src/projects/*.md"));
+	});
+	eleventyConfig.addCollection("pages", function(collectionApi) {
+		return sortByDisplayOrder(collectionApi.getFilteredByGlob("./src/pages/*.md"));
 	});
 
   return {

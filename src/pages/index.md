@@ -1,6 +1,10 @@
 ---
 title: "Arpit Agrawal"
 subtitle: "Web Developer"
+displayOrder: 1
+eleventyNavigation:
+  key: "Home"
+permalink: "/"
 layout: "layouts/home.html"
 image:
   link: "./src/images/qutub-minar.png"

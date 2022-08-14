@@ -1,6 +1,9 @@
 ---
 title: "Projects"
 subtitle: "(more to come)"
+displayOrder: 2
+eleventyNavigation:
+  key: "Projects"
 layout: "layouts/projects.html"
 image:
   link: "./src/images/painter.png"

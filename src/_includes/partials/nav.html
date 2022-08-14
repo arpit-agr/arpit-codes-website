@@ -1,11 +1,18 @@
-<!-- TODO: use 11ty nav plugin to generate this. check cg21's nav -->
+{% set navPages = collections.pages | eleventyNavigation %}
 
-<nav class="cluster">
-  <a class="btn step--1" href="/">Home</a>
-  <a class="btn step--1" href="/projects" title="View my projects">
-    Projects
-  </a>
-  <a class="btn step--1" href="mailto:{{ site.email }}">
-    Get in touch
-  </a>
+<nav class="nav">
+  <ul role="list" class="cluster">
+    {% for entry in navPages %}
+    <li>
+      <a 
+        class="btn step--1" 
+        href="{{ entry.url }}" 
+        {{ helpers.getLinkActiveState(entry.url, page.url) | safe }} 
+        aria-label="{{ entry.title }}"
+      >
+        {{ entry.title }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
 </nav>

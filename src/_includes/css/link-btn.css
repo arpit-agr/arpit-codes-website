@@ -2,7 +2,7 @@
 
 .btn {
 	position: relative;
-	padding: var(--space-2xs-xs);
+	padding: var(--space-xs-s) var(--space-3xs-2xs);
 }
 
 /* .btn::before {

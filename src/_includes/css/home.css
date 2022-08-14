@@ -15,7 +15,7 @@ picture {
 .hero-img {
 	inline-size: var(--step-10);
 	block-size: auto;
-	max-block-size: 68vh;
+	max-block-size: 66vh;
 	object-fit: contain;
 }
 

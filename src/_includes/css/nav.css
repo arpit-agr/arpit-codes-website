@@ -1,10 +1,22 @@
-nav {
-	--cluster-gap: 0;
-	--cluster-horizontal-alignment: space-between;
-	border-block-end: var(--underline-thickness) dotted;
+.nav ul {
+	--cluster-gap: var(--space-2xs-xs);
+	inline-size: 100%;
+	border-block-end: var(--underline-thickness) solid var(--bg-hover);
 	color: var(--text-secondary);
 }
 
-nav > :nth-child(2) {
+.nav ul > :nth-child(2) {
 	margin-inline-start: auto;
+}
+
+.nav a {
+	border-block-end: var(--underline-thickness) solid transparent;
+}
+
+.nav [aria-current="page"] {
+	border-color: currentColor;
+}
+
+.nav [data-state="active"] {
+	border-color: currentColor;
 }

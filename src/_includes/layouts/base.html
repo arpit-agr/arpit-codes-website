@@ -8,7 +8,6 @@
   <!-- CSS -->
   {%- include "css/styles.njk" -%}
   <!-- PRELOAD SCRIPTS AND FONTS-->
-  <link rel="preload" href="/fonts/PPEditorialNew-Italic-subset.woff2" as="font" type="font/woff2" crossorigin="">
   {%- block preload -%}{%- endblock -%}
   <!-- NAMED BLOCK TO INJECT ELEMENTS FROM LAYOUT FILES -->
   {%- block injectHead -%}{%- endblock -%}
@@ -20,7 +19,7 @@
   <header class="site-head">
     {% include "partials/nav.html" %}
   </header>
-  <main class="{%- block mainClass -%}{%- endblock %}" id="main" tabindex="-1">
+  <main class="stack" id="main" tabindex="-1">
     {%- block content -%}
       This page is under maintenance.
     {%- endblock -%}

@@ -1,5 +1,10 @@
 {%- extends "layouts/base.html" -%}
 
+{%- block prefetch -%}
+  <link rel="prefetch" href="/projects/" as="document">
+  <link rel="prefetch" href="/fonts/PPEditorialNew-Italic-subset.woff2" as="font">
+{%- endblock -%}
+
 {%- block content -%}
   {% image image.link , image.alt, image.sizes, image.loading, image.class, image.fetchPriority %}
   <div class="vh">

@@ -26,3 +26,10 @@ picture {
 
 	max-inline-size: calc(100vw - (2 * var(--gutter)));
 }
+
+/* headings use a special font */
+/* on the home page the heading is visually hidden */
+/* we apply the plain font to it so that the special font is not requested */
+.vh h1 {
+	font-family: var(--font-plain);
+}

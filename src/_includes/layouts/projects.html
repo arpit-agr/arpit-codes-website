@@ -7,7 +7,7 @@
 {%- block content -%}
   <div class="header cluster">
     <h1>{{ title }}</h1>
-    {% image image.link , image.alt, image.sizes, image.loading, image.class %}
+    {% image image.link , image.alt, image.sizes, image.loading, image.class, image.fetchPriority %}
   </div>
   <ol class="projects" role="list">
     {%- for project in collections.projects -%}

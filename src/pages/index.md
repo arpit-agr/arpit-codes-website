@@ -12,6 +12,7 @@ image:
   sizes: "(min-width: 30em) 50vw, 100vw"
   loading: "eager"
   class: "hero-img"
+  fetchPriority: "high"
 credit:
   imageLink: "https://www.oldbookillustrations.com/illustrations/qutub-minar/"
   site: "Old Book Illustrations"

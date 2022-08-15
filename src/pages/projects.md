@@ -11,6 +11,7 @@ image:
   sizes: "(min-width: 30em) 100vw, 50vw"
   loading: "eager"
   class: "painter"
+  fetchPriority: "high"
 credit:
   imageLink: "https://www.oldbookillustrations.com/illustrations/painter-at-work/"
   site: "Old Book Illustrations"

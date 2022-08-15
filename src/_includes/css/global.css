@@ -54,6 +54,7 @@ main {
 
 h1 {
 	font-family: var(--font-special);
+	font-style: italic;
 	font-size: var(--step-4);
 	font-weight: 400;
 	line-height: 1em;

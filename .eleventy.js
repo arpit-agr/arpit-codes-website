@@ -15,13 +15,9 @@ module.exports = function(eleventyConfig) {
   //Passthrough copy
   eleventyConfig.addPassthroughCopy("./src/fonts");
 	eleventyConfig.addPassthroughCopy("./src/images");
+  eleventyConfig.addPassthroughCopy({"./src/favicons": "/"});
+	eleventyConfig.addPassthroughCopy("./src/manifest.webmanifest");
 	// eleventyConfig.addPassthroughCopy("./src/scripts");
-  // eleventyConfig.addPassthroughCopy("./src/favicon.ico");
-	// eleventyConfig.addPassthroughCopy("./src/icon.svg");
-	// eleventyConfig.addPassthroughCopy("./src/apple-touch-icon.png");
-	// eleventyConfig.addPassthroughCopy("./src/icon-192.png");
-	// eleventyConfig.addPassthroughCopy("./src/icon-512.png");
-	// eleventyConfig.addPassthroughCopy("./src/manifest.webmanifest");
 
   //Watch target
 	// eleventyConfig.addWatchTarget("./src/_includes/css/");

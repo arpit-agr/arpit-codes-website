@@ -7,9 +7,11 @@
 {%- block content -%}
   <div class="header cluster">
     <h1>{{ title }}</h1>
-    {% image image.link , image.alt, image.sizes, image.loading, image.class, image.fetchPriority %}
+    <!-- {% image image.link , image.alt, image.sizes, image.loading, image.class, image.fetchPriority %} -->
+    {% include "snippets/heart.html" %}
+
   </div>
-  <ol class="projects" role="list">
+  <ul class="projects list" role="list">
     {%- for project in collections.projects -%}
       <li>
         <a class="cluster" href="{{ project.data.url }}">
@@ -17,7 +19,7 @@
         </a>
       </li>
     {%- endfor -%}
-  </ol>
+  </ul>
   {{ content | safe }}
-  {% include "partials/filter.html" %}
+  <!-- {% include "partials/filter.html" %} -->
 {%- endblock -%}

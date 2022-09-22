@@ -53,11 +53,14 @@ module.exports = function(eleventyConfig) {
   });
 
   // COLLECTIONS
-	eleventyConfig.addCollection("projects", function(collectionApi) {
-		return sortByDisplayOrder(collectionApi.getFilteredByGlob("./src/projects/*.md"));
-	});
 	eleventyConfig.addCollection("pages", function(collectionApi) {
 		return sortByDisplayOrder(collectionApi.getFilteredByGlob("./src/pages/*.md"));
+	});
+  eleventyConfig.addCollection("projects", function(collectionApi) {
+		return sortByDisplayOrder(collectionApi.getFilteredByGlob("./src/projects/*.md"));
+	});
+	eleventyConfig.addCollection("posts", function(collectionApi) {
+		return sortByDisplayOrder(collectionApi.getFilteredByGlob("./src/posts/*.md"));
 	});
 
   return {

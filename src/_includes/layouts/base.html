@@ -15,7 +15,7 @@
   {%- include "partials/meta.html" -%}
   {%- block prefetch -%}{%- endblock -%}
 </head>
-<body class="wrapper">
+<body class="layout-{{ layout | replace("layouts/", "") | replace(".html", "") }} wrapper">
   <a href="#main" class="skip-to-main step--1">Skip to content</a>
   <header class="site-head">
     {% include "partials/nav.html" %}

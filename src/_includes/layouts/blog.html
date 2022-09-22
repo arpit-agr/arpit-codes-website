@@ -1,0 +1,29 @@
+{%- extends "layouts/base.html" -%}
+
+{%- block preload -%}
+  <link rel="preload" href="/fonts/PPEditorialNew-Italic-subset.woff2" as="font" type="font/woff2" crossorigin>
+{%- endblock -%}
+
+{%- block content -%}
+  <div class="header cluster">
+    <h1>{{ title }}</h1>
+    <ul class="blog-desc" role="list">
+      {%- for item in description -%}
+        <li>
+          {{ item | safe }}
+        </li>
+      {%- endfor -%}
+    </ul>
+    {% include "snippets/squiggle.html" %}
+  </div>
+  {{ content | safe }}
+  <ol class="blog list" role="list">
+    {%- for post in collections.posts -%}
+      <li>
+        <a class="cluster" href="{{ post.url }}">
+          {{ post.data.title }}
+        </a>
+      </li>
+    {%- endfor -%}
+  </ol>
+{%- endblock -%}

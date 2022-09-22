@@ -1,0 +1,21 @@
+.list li + li {
+	border-block-start: var(--underline-thickness) solid currentColor;
+	border-color: var(--bg-hover);
+}
+
+.list a {
+	--cluster-horizontal-alignment: space-between;
+	padding-block: var(--space-3xs-2xs);
+	padding-inline: calc(var(--space-3xs-2xs) / 2);
+	text-decoration-line: none;
+	text-transform: capitalize;
+	/* font-size: var(--step-1); */
+}
+
+.list a:after {
+	content: "→";
+}
+
+.list a:where(:hover, :focus) {
+	background: radial-gradient(circle at left, var(--bg-hover), transparent);
+}

@@ -9,11 +9,16 @@
   {% include "./global.css" %}
   {% include "./nav.css" %}
   {% include "./footer.css" %}
+  {% include "./list.css" %}
+  {% include "./svg.css" %}
   {% if layout == "layouts/home.html" %}
     {% include "./home.css" %}
   {% endif %}
-  {% if layout == "layouts/projects.html" %}
-    {% include "./projects.css" %}
+  {% if layout == "layouts/blog.html" %}
+    {% include "./blog.css" %}
+  {% endif %}
+  {% if layout == "layouts/post.html" %}
+    {% include "./post.css" %}
   {% endif %}
   {# {% include "./at-property.css" %} #}
   {% include "./link-btn.css" %}

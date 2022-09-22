@@ -1,29 +1,14 @@
 /* home page styles */
 
-main {
+.layout-home main {
 	--stack-horizontal-alignment: center;
-	--stack-vertical-alignment: space-between;
-}
-
-picture {
-	flex-grow: 1;
-	/* vertically center the img in the picture element */
-	display: flex;
-	align-items: center;
-}
-
-.hero-img {
-	inline-size: var(--step-10);
-	block-size: auto;
-	max-block-size: 66vh;
-	object-fit: contain;
+	--stack-vertical-alignment: flex-end;
 }
 
 #logo {
 	align-self: flex-end;
 	inline-size: var(--step-10);
 	block-size: auto;
-
 	max-inline-size: calc(100vw - (2 * var(--gutter)));
 }
 
@@ -33,3 +18,16 @@ picture {
 .vh h1 {
 	font-family: var(--font-plain);
 }
+
+picture {
+	flex-grow: 1;
+	/* vertically center the img in the picture element */
+	display: flex;
+	align-items: center;
+}
+/* 
+.hero-img {
+	block-size: auto;
+	object-fit: contain;
+	inline-size: var(--step-8);
+} */

@@ -1,0 +1,34 @@
+:where(.arrow, .heart, .squiggle) path {
+	stroke: var(--text);
+}
+
+.arrow {
+	transform: scaleY(-1);
+	position: absolute;
+	width: auto;
+	height: 75vh;
+	z-index: -1;
+	bottom: 17.5%;
+	right: 17.5%;
+	right: 33%;
+	/* overflow: clip; */
+}
+
+.arrow path {
+	stroke-width: 0.5px;
+}
+
+.heart {
+	inline-size: var(--step-4);
+}
+
+.squiggle {
+	display: none;
+	inline-size: var(--step-6);
+}
+
+@media (min-width: 36em) {
+	.squiggle {
+		display: block;
+	}
+}

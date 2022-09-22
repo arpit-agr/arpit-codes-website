@@ -5,6 +5,7 @@
 	--font-special: "pp_editorial_newitalic", Georgia, "Times New Roman", serif;
 	--letter-spacing-0: -0.015em;
 	--letter-spacing-1: 0.015em;
+	--letter-spacing-2: 0.03em;
 	--underline-thickness: calc(0.075 * var(--step-0));
 	--underline-offset: calc(2 * var(--underline-thickness));
 }
@@ -23,6 +24,11 @@
 	--min-block-size: 100vh;
 	--max-inline-size: min(90rem, 100vw);
 	--gutter: var(--space-s-m);
+}
+
+/* transforms */
+:root {
+	--img-rotate: 0deg;
 }
 
 @supports (min-block-size: 100svh) {
@@ -49,7 +55,15 @@ body {
 
 main {
 	--stack-gap: var(--space-l-xl);
-	margin-block: var(--gutter);
+	--stack-horizontal-alignment: space-between;
+	--stack-vertical-alignment: space-between;
+	margin-block: var(--space-l-xl) var(--gutter);
+}
+
+.header {
+	--cluster-gap: var(--gutter);
+	--cluster-horizontal-alignment: space-between;
+	--cluster-vertical-alignment: center;
 }
 
 h1 {
@@ -76,12 +90,12 @@ a:where(:hover, :focus) {
 }
 
 img {
-	transform: rotate(-2deg);
+	transform: rotate(var(--img-rotate));
 }
 
 img:where(:hover, :focus) {
 	filter: url(#noise);
-	transform: rotate(-2deg) translate(-5px, -5px);
+	transform: rotate(var(--img-rotate)) translate(-5px, -5px);
 }
 
 :focus {

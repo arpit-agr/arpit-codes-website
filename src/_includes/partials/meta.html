@@ -16,11 +16,11 @@
   {% set opengraphUrl = site.url + '/img/og/' + page.fileSlug + '.jpeg' %}
 {%- endif -%} -->
 
-<title>{{ pageTitle }}</title>
+<title>{{ pageTitle | title }}</title>
 <link rel="canonical" href="{{ canonicalLink }}">
 
 <meta property="og:site_name" content="{{ siteTitle }}">
-<meta property="og:title" content="{{ pageTitle }}">
+<meta property="og:title" content="{{ pageTitle | title }}">
 <meta property="og:type" content="website">
 <meta property="og:url" content="{{ currentUrl }}">
 
@@ -30,9 +30,9 @@
 <meta property="og:image:alt" content="Page image for {{ pageTitle }}">
 <meta name="twitter:image:alt" content="Page image for {{ pageTitle }}"> -->
 
-<meta name="description" content="{{ description }}">
-<meta name="twitter:description" content="{{ description }}">
-<meta property="og:description" content="{{ description }}">
+<meta name="description" content="{{ description | capitalize }}">
+<meta name="twitter:description" content="{{ description | capitalize }}">
+<meta property="og:description" content="{{ description | capitalize }}">
 
 <!-- theme-color -->
 <meta name="theme-color" content="{{ site.themeColor }}">

@@ -2,4 +2,5 @@ h1 {
 	font-size: var(--step-3);
 	font-family: var(--font-plain);
 	font-style: normal;
+	text-transform: capitalize;
 }

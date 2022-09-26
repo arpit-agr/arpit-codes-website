@@ -1,5 +1,10 @@
 /* home page styles */
 
+/* needed for the arrow doodle */
+/* .layout-home {
+	overflow: hidden;
+} */
+
 .layout-home main {
 	--stack-horizontal-alignment: center;
 	--stack-vertical-alignment: flex-end;
@@ -10,6 +15,17 @@
 	inline-size: var(--step-10);
 	block-size: auto;
 	max-inline-size: calc(100vw - (2 * var(--gutter)));
+	opacity: 0;
+	transform: translateY(-10%);
+	animation-name: fade-in;
+	animation-duration: 0.66s;
+	animation-fill-mode: forwards;
+	animation-timing-function: var(--ease-2);
+	/* animation-delay: 1.25s; */
+}
+
+#logo path {
+	fill: var(--text);
 }
 
 /* headings use a special font */
@@ -19,13 +35,13 @@
 	font-family: var(--font-plain);
 }
 
-picture {
+/* vertically center the img in the picture element */
+/* picture {
 	flex-grow: 1;
-	/* vertically center the img in the picture element */
 	display: flex;
 	align-items: center;
 }
-/* 
+
 .hero-img {
 	block-size: auto;
 	object-fit: contain;

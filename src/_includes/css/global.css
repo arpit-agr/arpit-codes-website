@@ -8,6 +8,7 @@
 	--letter-spacing-2: 0.03em;
 	--underline-thickness: calc(0.075 * var(--step-0));
 	--underline-offset: calc(2 * var(--underline-thickness));
+	--svg-thickness: 2px;
 }
 
 /* color */
@@ -22,9 +23,9 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-	--bg: hsl(0deg 0% 1%);
+		--bg: hsl(0deg 0% 1%);
 		--bg-hover: hsla(0, 0%, 94%, 0.16);
-	--text: hsl(0deg 0% 99%);
+		--text: hsl(0deg 0% 99%);
 		--text-secondary: hsla(0, 0%, 100%, 0.8);
 	}
 }
@@ -38,9 +39,11 @@
 	--btn-padding-inline: var(--space-3xs);
 }
 
-/* transforms */
+/* transforms and animations */
 :root {
 	--img-rotate: 0deg;
+	--ease-1: cubic-bezier(0.25, 0, 0.5, 1);
+	--ease-2: cubic-bezier(0.66, 0, 0.2, 1);
 }
 
 @supports (min-block-size: 100svh) {

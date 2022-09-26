@@ -6,7 +6,7 @@
 .aside details {
 	position: relative;
 	padding: var(--step--1);
-	outline: var(--underline-thickness) solid currentColor;
+	border: var(--underline-thickness) solid currentColor;
 	border-radius: calc(2 * var(--underline-thickness));
 	font-size: var(--step--1);
 }

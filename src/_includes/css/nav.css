@@ -1,7 +1,6 @@
 .nav ul {
 	--cluster-gap: var(--space-2xs-xs);
-	inline-size: 100%;
-	border-block-end: var(--underline-thickness) solid var(--bg-hover);
+	/* inline-size: 100%; */
 	color: var(--text-secondary);
 }
 
@@ -10,17 +9,9 @@
 }
 
 .nav a {
-	border-block-end: var(--underline-thickness) solid transparent;
-
-	min-inline-size: 7.8ch;
-	text-align: center;
-	font-weight: 500;
+	position: relative;
 }
 
-.nav [aria-current="page"] {
-	border-color: currentColor;
-}
-
-.nav [data-state="active"] {
-	border-color: currentColor;
+.nav a:hover {
+	background-color: unset;
 }

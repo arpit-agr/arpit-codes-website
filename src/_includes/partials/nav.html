@@ -5,12 +5,13 @@
     {% for entry in navPages %}
     <li>
       <a 
-        class="btn step--1" 
+        class="btn" 
         href="{{ entry.url }}" 
         {{ helpers.getLinkActiveState(entry.url, page.url) | safe }} 
         aria-label="{{ entry.title }}"
       >
         {{ entry.title }}
+        {% include "snippets/circle.html" %}
       </a>
     </li>
     {% endfor %}

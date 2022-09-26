@@ -1,21 +1,51 @@
-:where(.arrow, .heart, .squiggle) path {
+:where(.circle, .heart, .squiggle) path {
 	stroke: var(--text);
 }
 
-.arrow {
-	transform: scaleY(-1);
+/* for some reason, stroke-width is double of the expected value when using the code below */
+/* .circle path {
+	stroke-width: var(--svg-thickness);
+} */
+
+.circle {
+	width: calc(100% + (2 * var(--btn-padding-inline)));
+	height: calc(100% - var(--btn-padding-block));
 	position: absolute;
-	width: auto;
-	height: 75vh;
-	z-index: -1;
-	bottom: 17.5%;
-	right: 17.5%;
-	right: 33%;
-	/* overflow: clip; */
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	fill: none;
+	stroke-linecap: round;
+	stroke-dasharray: var(--offset, 69px) 278px;
+	stroke-dashoffset: 361px;
+	/* transition: stroke 0.25s ease var(--stroke-delay, 0s),
+		stroke-dasharray 0.5s cubic-bezier(0.25, 0, 0.5, 1); */
+	transition-property: stroke-dasharray;
+	transition-duration: 0.5s;
+	transition-timing-function: linear;
+	pointer-events: none;
 }
 
-.arrow path {
-	stroke-width: 0.5px;
+:where(.nav a:hover, .nav [aria-current="page"], .nav [data-state="active"])
+	.circle {
+	/* --spacing: var(--space-3xs); */
+	/* --stroke-delay: 0.1s; */
+	--offset: 180px;
+}
+
+:where(.heart, .squiggle) path {
+	stroke-width: var(--svg-thickness);
+}
+
+.heart,
+.squiggle {
+	stroke-dasharray: 400;
+	stroke-dashoffset: 400;
+	animation-duration: 2.5s;
+	animation-fill-mode: forwards;
+	animation-name: draw;
+	animation-delay: 0.2s;
+	animation-timing-function: var(--ease-1);
 }
 
 .heart {
@@ -31,4 +61,36 @@
 	.squiggle {
 		display: block;
 	}
+}
+
+/* .arrow {
+	transform: scaleY(-1);
+	position: absolute;
+	width: auto;
+	height: 75vh;
+	z-index: -1;
+	bottom: 17.5%;
+	right: 17.5%;
+	right: 33%;
+}
+
+.arrow {
+	position: absolute;
+	width: 100vw;
+	height: auto;
+	z-index: -1;
+	transform: scaleY(-1);
+	--logo-size: min(var(--step-10), calc(100vw - (2 * var(--gutter))));
+	bottom: calc(var(--logo-size) / 5.525 + (2 * var(--gutter)));
+	right: calc(var(--logo-size) / 4);
+	animation-delay: 0s;
+}
+
+.arrow path {
+	stroke-width: 0.75px;
+	stroke-linecap: square;
+} */
+
+.arrow {
+	display: none;
 }

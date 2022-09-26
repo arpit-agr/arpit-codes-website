@@ -1,27 +1,52 @@
 /* home page styles */
 
-/* needed for the arrow doodle */
-/* .layout-home {
-	overflow: hidden;
-} */
-
 .layout-home main {
-	--stack-horizontal-alignment: center;
-	--stack-vertical-alignment: flex-end;
+	--stack-horizontal-alignment: flex-start;
+	--stack-vertical-alignment: space-between;
+}
+
+.desc {
+	order: -1;
+	max-width: 38ch;
+	font-size: var(--step-0);
+}
+
+.desc > :where(*:nth-child(1), *:nth-child(2), *:nth-child(3)) {
+	transform: translateY(-1ex);
+	opacity: 0;
+	animation-name: fade-in;
+	animation-duration: 0.66s;
+	animation-fill-mode: forwards;
+	animation-delay: 1.32s;
+}
+
+.desc > *:nth-child(1) {
+	animation-delay: 0.66s;
+}
+
+.desc > *:nth-child(2) {
+	animation-delay: 1.32s;
+}
+
+.desc > *:nth-child(3) {
+	animation-delay: 1.98s;
+}
+
+.has-js .desc > *:nth-child(3) {
+	animation-delay: 1.32s;
 }
 
 #logo {
 	align-self: flex-end;
-	inline-size: var(--step-10);
+	/* inline-size: var(--step-10); */
+	inline-size: 100%;
+	max-inline-size: calc(80rem * 0.66);
 	block-size: auto;
-	max-inline-size: calc(100vw - (2 * var(--gutter)));
 	opacity: 0;
-	transform: translateY(-10%);
 	animation-name: fade-in;
 	animation-duration: 0.66s;
 	animation-fill-mode: forwards;
 	animation-timing-function: var(--ease-2);
-	/* animation-delay: 1.25s; */
 }
 
 #logo path {

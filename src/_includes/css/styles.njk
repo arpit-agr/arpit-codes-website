@@ -11,6 +11,7 @@
   {% include "./footer.css" %}
   {% include "./list.css" %}
   {% include "./svg.css" %}
+  {% include "./aside.css" %}
   {% if layout == "layouts/home.html" %}
     {% include "./home.css" %}
   {% endif %}
@@ -20,10 +21,10 @@
   {% if layout == "layouts/post.html" %}
     {% include "./post.css" %}
   {% endif %}
-  {# {% include "./at-property.css" %} #}
   {% include "./link-btn.css" %}
   {% include "./utilities.css" %}
   {% include "./keyframes.css" %}
+  {# {% include "./at-property.css" %} #}
 {% endset %}
 
 <style>{{ css | cssmin | safe }}</style>

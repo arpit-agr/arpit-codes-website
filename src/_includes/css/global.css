@@ -6,8 +6,8 @@
 	--letter-spacing-0: -0.015em;
 	--letter-spacing-1: 0.015em;
 	--letter-spacing-2: 0.03em;
-	--underline-thickness: calc(0.075 * var(--step-0));
-	--underline-offset: calc(2 * var(--underline-thickness));
+	--underline-thickness: 0.075em;
+	--underline-offset: calc(4 * var(--underline-thickness));
 	--svg-thickness: 2px;
 }
 
@@ -96,28 +96,37 @@ h1 {
 	display: inline-block;
 	color: inherit;
 	text-decoration-line: underline;
-	/* text-decoration-thickness: var(--underline-thickness);
-	text-underline-offset: var(--underline-offset); */
-	text-decoration: none;
+	text-decoration-thickness: var(--underline-thickness);
+	text-underline-offset: var(--underline-offset);
+	-webkit-tap-highlight-color: transparent;
 }
 
 a:where(:hover, :focus) {
+	--underline-thickness: 0.15em;
+	--underline-offset: calc(1 * var(--underline-thickness));
+	/* background-color: var(--bg-hover); */
 	color: var(--text);
-	background-color: var(--bg-hover);
+}
+
+summary {
+	cursor: pointer;
+	touch-action: manipulation;
+}
+
+sup {
+	font-size: var(--step--1);
 }
 
 img {
 	transform: rotate(var(--img-rotate));
 }
 
-img:where(:hover, :focus) {
+/* img:where(:hover, :focus) {
 	filter: url(#noise);
 	transform: rotate(var(--img-rotate)) translate(-5px, -5px);
-}
+} */
 
 :focus {
-	--underline-offset: calc(-0.5 * var(--underline-thickness));
-
 	outline: var(--underline-thickness) solid var(--underline-color);
 	outline-offset: var(--underline-offset);
 }

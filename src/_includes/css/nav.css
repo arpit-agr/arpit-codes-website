@@ -10,6 +10,7 @@
 
 .nav a {
 	position: relative;
+	text-decoration: none;
 }
 
 .nav a:hover {

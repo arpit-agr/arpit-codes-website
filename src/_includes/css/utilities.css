@@ -48,3 +48,7 @@
 	text-transform: uppercase;
 	letter-spacing: var(--letter-spacing-2);
 }
+
+.font-weight\:500 {
+	font-weight: 500;
+}

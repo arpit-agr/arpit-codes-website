@@ -1,5 +1,5 @@
 :where(.circle, .heart, .squiggle) path {
-	stroke: var(--text);
+	stroke: currentColor;
 }
 
 /* for some reason, stroke-width is double of the expected value when using the code below */
@@ -8,11 +8,11 @@
 } */
 
 .circle {
-	width: calc(100% + (2 * var(--btn-padding-inline)));
-	height: calc(100% - var(--btn-padding-block));
+	inline-size: calc(100% + (2 * var(--btn-padding-inline)));
+	block-size: calc(100% - (1.5 * var(--btn-padding-block)));
 	position: absolute;
-	left: 50%;
-	top: 50%;
+	inset-block-start: 50%;
+	inset-inline-start: 50%;
 	transform: translate(-50%, -50%);
 	fill: none;
 	stroke-linecap: round;
@@ -63,36 +63,4 @@
 	.squiggle {
 		display: block;
 	}
-}
-
-/* .arrow {
-	transform: scaleY(-1);
-	position: absolute;
-	width: auto;
-	height: 75vh;
-	z-index: -1;
-	bottom: 17.5%;
-	right: 17.5%;
-	right: 33%;
-}
-
-.arrow {
-	position: absolute;
-	width: 100vw;
-	height: auto;
-	z-index: -1;
-	transform: scaleY(-1);
-	--logo-size: min(var(--step-10), calc(100vw - (2 * var(--gutter))));
-	bottom: calc(var(--logo-size) / 5.525 + (2 * var(--gutter)));
-	right: calc(var(--logo-size) / 4);
-	animation-delay: 0s;
-}
-
-.arrow path {
-	stroke-width: 0.75px;
-	stroke-linecap: square;
-} */
-
-.arrow {
-	display: none;
 }

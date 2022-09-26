@@ -11,6 +11,10 @@
 	text-transform: capitalize;
 }
 
+.list a:focus {
+	--underline-offset: calc(-0.5 * var(--underline-thickness));
+}
+
 .list a:after {
 	content: "→";
 }

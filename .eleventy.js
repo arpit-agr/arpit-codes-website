@@ -17,11 +17,11 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addPassthroughCopy("./src/images");
   eleventyConfig.addPassthroughCopy({"./src/favicons": "/"});
 	eleventyConfig.addPassthroughCopy("./src/manifest.webmanifest");
-	// eleventyConfig.addPassthroughCopy("./src/scripts");
+	eleventyConfig.addPassthroughCopy("./src/scripts");
 
   //Watch target
-	// eleventyConfig.addWatchTarget("./src/_includes/css/");
-	// eleventyConfig.addWatchTarget('./src/scripts/');
+	eleventyConfig.addWatchTarget("./src/_includes/css/");
+	eleventyConfig.addWatchTarget('./src/scripts/');
 
   //Filter
   eleventyConfig.addFilter("cssmin", function(code) {
@@ -35,6 +35,21 @@ module.exports = function(eleventyConfig) {
 
   //SHORTCODE
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+  eleventyConfig.addPairedShortcode('aside', (content, { id }) => {
+    return `<a href="#${id}" id="${id}ref" class="aside-phrase">${content}</a>`;
+  });
+  eleventyConfig.addPairedShortcode('asideText', (content, { id }) => {
+    return `
+<aside class="aside" id="${id}" aria-labelledby="${id}ref">
+	<details-utils close-esc>
+	<details class="flow">
+    <summary class="font-weight:500">Aside</summary>
+    ${content}
+  </details>
+	</details-utils>
+</aside>
+`;
+  });
 
   //Transforms
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {

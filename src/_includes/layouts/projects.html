@@ -7,7 +7,6 @@
 {%- block content -%}
   <div class="header cluster">
     <h1>{{ title }}</h1>
-    <!-- {% image image.link , image.alt, image.sizes, image.loading, image.class, image.fetchPriority %} -->
     {% include "snippets/heart.html" %}
 
   </div>
@@ -21,5 +20,4 @@
     {%- endfor -%}
   </ul>
   {{ content | safe }}
-  <!-- {% include "partials/filter.html" %} -->
 {%- endblock -%}

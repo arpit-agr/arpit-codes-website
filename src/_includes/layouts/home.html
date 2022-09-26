@@ -6,7 +6,6 @@
 {%- endblock -%}
 
 {%- block content -%}
-  <!-- {% image image.link , image.alt, image.sizes, image.loading, image.class, image.fetchPriority %} -->
   <div class="vh">
     <h1>{{ title }}</h1>
     <p>{{ subtitle }}</p>
@@ -15,5 +14,4 @@
   {{ content | safe }}
 
   {% include "snippets/arrow.html" %}
-  <!-- {% include "partials/filter.html" %} -->
 {%- endblock -%}

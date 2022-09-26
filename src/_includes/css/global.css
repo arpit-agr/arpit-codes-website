@@ -37,6 +37,8 @@
 	--gutter: var(--space-s-m);
 	--btn-padding-block: var(--space-xs);
 	--btn-padding-inline: var(--space-3xs);
+	--li-padding-block: var(--space-2xs);
+	--li-padding-inline: calc(var(--space-2xs) / 2);
 }
 
 /* transforms and animations */

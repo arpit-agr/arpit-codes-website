@@ -8,10 +8,11 @@
 	transition: transform 0.15s ease;
 	z-index: 999;
 	padding: var(--space-2xs-xs);
+	background: var(--bg);
 }
 
 .skip-to-main:focus {
 	opacity: 1;
-	outline: 0;
+	/* outline: 0; */
 	transform: translate(0);
 }

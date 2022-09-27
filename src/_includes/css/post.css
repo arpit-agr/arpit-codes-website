@@ -1,6 +1,33 @@
-h1 {
+.article-container {
+	max-width: min(40em, 100%);
+	margin-inline: auto;
+
+	display: grid;
+	grid-template-columns: auto min-content;
+	grid-gap: 2em 1em;
+}
+
+.article-container h1 {
 	font-size: var(--step-3);
 	font-family: var(--font-plain);
 	font-style: normal;
 	text-transform: capitalize;
+	font-weight: 700;
+}
+
+.article-body {
+	--flow-space: 2em;
+	grid-column: span 2;
+}
+
+.article-body * {
+	--flow-space: 1em;
+}
+
+.article-body li + li {
+	margin-top: var(--flow-space, 1em);
+}
+
+.footnotes {
+	font-size: var(--step--1);
 }

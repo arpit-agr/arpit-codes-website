@@ -1,4 +1,4 @@
-:where(.circle, .heart, .squiggle) path {
+:where(.circle, .heart, .squiggle, .hash) path {
 	stroke: currentColor;
 }
 
@@ -40,7 +40,8 @@
 }
 
 .heart,
-.squiggle {
+.squiggle,
+.hash {
 	stroke-dasharray: 400;
 	stroke-dashoffset: 400;
 	animation-duration: 2.5s;
@@ -63,4 +64,8 @@
 	.squiggle {
 		display: block;
 	}
+}
+
+.hash {
+	inline-size: var(--step-2);
 }

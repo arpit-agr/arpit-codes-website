@@ -67,7 +67,7 @@ module.exports = function(eleventyConfig) {
     return content;
   });
 
-  // COLLECTIONS
+  // Collections
 	eleventyConfig.addCollection("pages", function(collectionApi) {
 		return sortByDisplayOrder(collectionApi.getFilteredByGlob("./src/pages/*.md"));
 	});
@@ -77,6 +77,18 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addCollection("posts", function(collectionApi) {
 		return sortByDisplayOrder(collectionApi.getFilteredByGlob("./src/posts/*.md"));
 	});
+
+  //Markdown
+  let markdownIt = require("markdown-it");
+	let markdownItFootnote = require("markdown-it-footnote");
+  let options = {
+    html: true,
+    breaks: true,
+    linkify: true
+	};
+  let markdownLib = markdownIt(options).use(markdownItFootnote);
+	eleventyConfig.setLibrary("md", markdownLib);
+  
 
   return {
     // dataTemplateEngine: "njk",

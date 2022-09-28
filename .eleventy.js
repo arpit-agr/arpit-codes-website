@@ -4,6 +4,7 @@ const CleanCSS = require("clean-css");
 const imageShortcode = require("./src/_11ty/shortcodes/image");
 const sortByDisplayOrder = require('./src/_11ty/utils/sort-by-display-order.js');
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const { DateTime } = require("luxon");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setQuietMode(true);
@@ -32,6 +33,9 @@ module.exports = function(eleventyConfig) {
       return code
     }
   });
+  eleventyConfig.addFilter("postDate", (dateObj) => {
+		return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
+	});
 
   //SHORTCODE
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);

@@ -1,3 +1,8 @@
+.list li {
+	--cluster-vertical-alignment: baseline;
+	position: relative;
+}
+
 .list li + li {
 	border-block-start: var(--underline-thickness) solid currentColor;
 	border-color: var(--border-color);
@@ -11,14 +16,25 @@
 	text-transform: capitalize;
 }
 
+.list a:after {
+	content: "";
+	position: absolute;
+	inset: 0;
+}
+
 .list a:focus {
 	--underline-offset: calc(-0.5 * var(--underline-thickness));
 }
 
-.list a:after {
+.list li:after {
 	content: "→";
+	margin-inline-start: auto;
 }
 
-.list a:where(:hover, :focus) {
+.layout-links .list li:after {
+	content: "↗";
+}
+
+.list li:where(:hover, :focus) {
 	background: radial-gradient(circle at left, var(--bg-hover), transparent);
 }

@@ -1,5 +1,6 @@
 ---
 title: "Hello world!"
+date: 2022-09-27
 ---
 
 I never imagined I would be starting a blog. And for that I must thank [Rach](https://rachsmith.com/why-write/) [Smith](https://rachsmith.com/fuck-it/), [Chris](https://chriscoyier.net/2022/05/11/🧠💭✏%EF%B8%8F/) [Coyier](https://chriscoyier.net/2022/06/27/there-is-no-bar/), [Robin Rendle](https://www.robinrendle.com/notes/take-care-of-your-blog-/) and [Matthias Ott](https://matthiasott.com/notes/just-put-stuff-out-there). Their posts gave me the courage to go ahead and start blogging.

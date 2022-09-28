@@ -12,8 +12,8 @@
   </div>
   <ul class="projects list" role="list">
     {%- for project in collections.projects -%}
-      <li>
-        <a class="cluster" href="{{ project.data.url }}">
+      <li class="cluster">
+        <a href="{{ project.data.url }}">
           {{ project.data.title }}
         </a>
       </li>

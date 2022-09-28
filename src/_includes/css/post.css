@@ -1,10 +1,6 @@
 .article-container {
-	max-width: min(40em, 100%);
-	margin-inline: auto;
-
-	display: grid;
-	grid-template-columns: auto min-content;
-	grid-gap: 2em 1em;
+	max-width: min(36em, 100%);
+	/* margin-inline: auto; */
 }
 
 .article-container h1 {
@@ -15,9 +11,12 @@
 	font-weight: 700;
 }
 
+.layout-post time {
+	display: block;
+}
+
 .article-body {
 	--flow-space: 2em;
-	grid-column: span 2;
 }
 
 .article-body * {

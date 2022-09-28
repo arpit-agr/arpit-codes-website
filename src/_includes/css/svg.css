@@ -51,8 +51,9 @@
 	animation-timing-function: var(--ease-1);
 }
 
-.heart {
-	inline-size: var(--step-4);
+.heart,
+.hash {
+	block-size: var(--step-4);
 }
 
 .squiggle {
@@ -64,8 +65,4 @@
 	.squiggle {
 		display: block;
 	}
-}
-
-.hash {
-	inline-size: var(--step-2);
 }

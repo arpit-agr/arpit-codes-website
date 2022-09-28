@@ -1,0 +1,32 @@
+{%- extends "layouts/base.html" -%}
+
+{%- block preload -%}
+  <link rel="preload" href="/fonts/PPEditorialNew-Italic-subset.woff2" as="font" type="font/woff2" crossorigin>
+{%- endblock -%}
+
+{%- block content -%}
+  <div class="header cluster">
+    <h1>{{ title }}</h1>
+    <!-- <ul class="page-desc" role="list">
+      {%- for item in description -%}
+        <li>
+          {{ item | safe }}
+        </li>
+      {%- endfor -%}
+    </ul> -->
+    {% include "snippets/hash.html" %}
+  </div>
+  {{ content | safe }}
+  <ol class="links list" role="list">
+    {%- for link in collections.links -%}
+      <li class="cluster">
+        <a href="{{ link.data.url }}">
+          {{ link.data.title }}
+        </a>
+        <time datetime={{ link.date | dump | safe }}>
+          {{ link.date | postDate }}
+      </time>
+      </li>
+    {%- endfor -%}
+  </ol>
+{%- endblock -%}

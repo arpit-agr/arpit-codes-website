@@ -81,6 +81,9 @@ module.exports = function(eleventyConfig) {
 	eleventyConfig.addCollection("posts", function(collectionApi) {
 		return sortByDisplayOrder(collectionApi.getFilteredByGlob("./src/posts/*.md"));
 	});
+  eleventyConfig.addCollection("links", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("./src/links/*.md");
+  });
 
   //Markdown
   let markdownIt = require("markdown-it");

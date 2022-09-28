@@ -1,8 +1,8 @@
 ---
-title: "Get in touch"
-displayOrder: 4
+title: "Contact"
+displayOrder: 5
 eleventyNavigation:
-  key: "Get in touch"
+  key: "Contact"
   url: "mailto:arpit.agrawal2502@gmail.com"
 permalink: false
 ---

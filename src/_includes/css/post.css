@@ -24,9 +24,14 @@
 }
 
 .article-body li + li {
+	--flow-space: 1ch;
 	margin-top: var(--flow-space, 1em);
 }
 
 .footnotes {
 	font-size: var(--step--1);
+}
+
+.footnotes-list {
+	padding-inline-start: 1rem;
 }

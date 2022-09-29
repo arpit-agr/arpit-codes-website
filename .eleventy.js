@@ -95,7 +95,42 @@ module.exports = function(eleventyConfig) {
 	};
   let markdownLib = markdownIt(options).use(markdownItFootnote);
 	eleventyConfig.setLibrary("md", markdownLib);
+  markdownLib.renderer.rules.footnote_caption = (tokens, idx/*, options, env, slf*/) => {
+    var n = Number(tokens[idx].meta.id + 1).toString();
   
+    if (tokens[idx].meta.subId > 0) {
+      n += ':' + tokens[idx].meta.subId;
+    }
+  
+    return n;
+  }
+  markdownLib.renderer.rules.footnote_ref = (tokens, idx, options, env, slf) => {
+		var id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
+		var caption = slf.rules.footnote_caption(tokens, idx, options, env, slf);
+		var refid = id;
+		if (tokens[idx].meta.subId > 0) {
+			refid += ':' + tokens[idx].meta.subId;
+		}
+	
+		return `
+			<sup class="footnote-ref">
+				<a href="#fn${id}" id="fnref${refid}"><span class="vh">Footnote</span>${caption}</a>
+			</sup>`;
+	}
+  markdownLib.renderer.rules.footnote_anchor = (tokens, idx, options, env, slf) => {
+		var id = slf.rules.footnote_anchor_name(tokens, idx, options, env, slf);
+		var caption = slf.rules.footnote_caption(tokens, idx, options, env, slf);
+		var refid = id;
+		
+		if (tokens[idx].meta.subId > 0) {
+			id += ':' + tokens[idx].meta.subId;
+		}
+		if (tokens[idx].meta.subId > 0) {
+			refid += ':' + tokens[idx].meta.subId;
+		}
+
+		return ``;
+	}
 
   return {
     // dataTemplateEngine: "njk",

@@ -6,6 +6,7 @@
 	--letter-spacing-0: -0.015em;
 	--letter-spacing-1: 0.015em;
 	--letter-spacing-2: 0.03em;
+	--line-height: 1.7;
 	--underline-thickness: 0.075em;
 	--underline-offset: calc(4 * var(--underline-thickness));
 	--svg-thickness: 2px;
@@ -70,7 +71,7 @@ body {
 	color: var(--text);
 	font-family: var(--font-plain);
 	font-size: var(--step-0);
-	line-height: 1.7;
+	line-height: var(--line-height);
 }
 
 body {
@@ -137,7 +138,15 @@ summary {
 }
 
 sup {
-	font-size: var(--step--1);
+	position: relative;
+	inset-block-start: auto;
+	vertical-align: text-bottom;
+	font-feature-settings: "numr";
+	/* font-size: var(--step--1); */
+}
+
+sup a {
+	text-decoration: none;
 }
 
 img {

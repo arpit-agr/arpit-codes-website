@@ -7,7 +7,7 @@ I never imagined I would be starting a blog. And for that I must thank [Rach](ht
 
 In true developer fashion though, I ended up redesigning my website in the process of writing this post.
 
-I was nervous to write a _public_ blog.[^1] Moreover, I had no idea what I was going to write about. So, I immediately went back to doing something more in my comfort zone — endlessly redesigning this website.
+I was nervous to write a _public_ blog[^1]. Moreover, I had no idea what I was going to write about. So, I immediately went back to doing something more in my comfort zone — endlessly redesigning this website.
 
 It wasn’t a waste of time though. I like the design… _for the time being_[^2]. Plus it gave me something to write about.
 
@@ -20,5 +20,5 @@ In the end:
 For now, it’s time to publish.
 
 [^1]: I still am nervous.
-[^2]: <q>I am perpetually unsatisfied with it</q> as [Jim Nielsen](https://twitter.com/jimniels/status/1573873793138835458/photo/1) puts it for his personal website.
+[^2]: <q>I am perpetually unsatisfied with it</q> — as [Jim Nielsen](https://twitter.com/jimniels/status/1573873793138835458/photo/1) puts it for his personal website.
 [^3]: [In The End - Linkin Park](https://www.youtube.com/watch?v=eVTXPUF4Oz4)

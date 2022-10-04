@@ -2,7 +2,7 @@
 title: "Links"
 description:
   - "handpicked by me"
-  - "worth sharing"
+  - "worth sharing with you"
 displayOrder: 4
 eleventyNavigation:
   key: "Links"

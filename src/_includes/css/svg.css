@@ -56,13 +56,18 @@
 	block-size: var(--step-4);
 }
 
-.squiggle {
+.squiggle,
+.hash {
 	display: none;
+}
+
+.squiggle {
 	inline-size: var(--step-6);
 }
 
 @media (min-width: 36em) {
-	.squiggle {
+	.squiggle,
+	.hash {
 		display: block;
 	}
 }

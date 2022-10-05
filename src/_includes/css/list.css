@@ -1,6 +1,11 @@
 .list li {
-	--cluster-vertical-alignment: baseline;
+	--columns: 1fr min-content;
+	--grid-gap: 0 var(--space-3xs-2xs);
 	position: relative;
+	display: grid;
+	gap: var(--grid-gap);
+	grid-template-columns: var(--columns);
+	align-items: baseline;
 }
 
 .list li + li {
@@ -9,7 +14,6 @@
 }
 
 .list a {
-	--cluster-horizontal-alignment: space-between;
 	padding-block: var(--li-padding-block);
 	padding-inline: var(--li-padding-inline);
 	text-decoration-line: none;
@@ -28,13 +32,21 @@
 
 .list li:after {
 	content: "→";
-	margin-inline-start: auto;
-}
-
-.layout-links .list li:after {
-	content: "↗";
 }
 
 .list li:where(:hover, :focus) {
 	background: radial-gradient(circle at left, var(--bg-hover), transparent);
+}
+
+.layout-blog .list li > div {
+	--cluster-gap: var(--grid-gap);
+	--cluster-vertical-alignment: baseline;
+}
+
+.layout-blog .list li time {
+	padding-block: 0 var(--li-padding-block);
+}
+
+.layout-links .list li:after {
+	content: "↗";
 }

@@ -19,13 +19,15 @@
   {{ content | safe }}
   <ol class="blog list" role="list" reversed>
     {%- for post in collections.posts | reverse -%}
-      <li class="cluster">
-        <a href="{{ post.url }}">
-          {{ post.data.title }}
-        </a>
-        <time datetime={{ post.date | dump | safe }}>
-          {{ post.date | postDate }}
-      </time>
+      <li>
+        <div class="cluster">
+          <a href="{{ post.url }}">
+            {{ post.data.title | addNbsp | safe }}
+          </a>
+          <time datetime={{ post.date | dump | safe }}>
+            {{ post.date | postDate }}
+          </time>
+        </div>
       </li>
     {%- endfor -%}
   </ol>

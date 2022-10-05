@@ -79,7 +79,7 @@ module.exports = function(eleventyConfig) {
 		return sortByDisplayOrder(collectionApi.getFilteredByGlob("./src/projects/*.md"));
 	});
 	eleventyConfig.addCollection("posts", function(collectionApi) {
-		return sortByDisplayOrder(collectionApi.getFilteredByGlob("./src/posts/*.md"));
+    return collectionApi.getFilteredByGlob("./src/posts/*.md");
 	});
   eleventyConfig.addCollection("links", function(collectionApi) {
     return collectionApi.getFilteredByGlob("./src/links/*.md");

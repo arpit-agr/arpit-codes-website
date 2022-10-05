@@ -17,8 +17,8 @@
     {% include "snippets/hash.html" %}
   </div>
   {{ content | safe }}
-  <ol class="links list" role="list">
-    {%- for link in collections.links -%}
+  <ol class="links list" role="list" reversed>
+    {%- for link in collections.links | reverse -%}
       <li class="cluster">
         <a href="{{ link.data.url }}">
           {{ link.data.title }}

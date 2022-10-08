@@ -48,5 +48,5 @@
 }
 
 .layout-links .list li:after {
-	content: "↗";
+	rotate: -45deg;
 }

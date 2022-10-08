@@ -2,12 +2,14 @@
 :root {
 	--font-plain: "Recursive", sans-serif;
 	--font-special: "Recursive", sans-serif;
+	--letter-spacing--2: -0.06em;
+	--letter-spacing--1: -0.03em;
 	--letter-spacing-0: -0.015em;
 	--letter-spacing-1: 0.015em;
 	--letter-spacing-2: 0.03em;
-	--line-height: 1.7;
+	--line-height: 1.6;
 	--underline-thickness: 0.075em;
-	--underline-offset: calc(4 * var(--underline-thickness));
+	--underline-offset: calc(2 * var(--underline-thickness));
 	--svg-thickness: 2px;
 
 	--mono: "MONO" 0;
@@ -77,6 +79,7 @@ body {
 	font-family: var(--font-plain);
 	font-size: var(--step-0);
 	line-height: var(--line-height);
+	/* letter-spacing: var(--letter-spacing-0); */
 }
 
 body {
@@ -90,6 +93,7 @@ body {
 	font-variation-settings: var(--mono), var(--casl), var(--wght), var(--slnt),
 		var(--CRSV);
 }
+
 main {
 	--stack-gap: var(--space-l-xl);
 	--stack-horizontal-alignment: space-between;
@@ -108,12 +112,11 @@ main {
 }
 
 h1 {
+	--wght: "wght" 700;
 	font-family: var(--font-special);
-	font-style: italic;
 	font-size: var(--step-4);
-	font-weight: 400;
 	line-height: 1em;
-	letter-spacing: var(--letter-spacing-0);
+	letter-spacing: var(--letter-spacing--2);
 }
 
 h2 {
@@ -121,7 +124,7 @@ h2 {
 	font-style: italic;
 	font-size: var(--step-2);
 	font-weight: 400;
-	line-height: 1em;
+	line-height: 1;
 	letter-spacing: var(--letter-spacing-0);
 }
 
@@ -132,12 +135,13 @@ h2 {
 	text-decoration-thickness: var(--underline-thickness);
 	text-underline-offset: var(--underline-offset);
 	-webkit-tap-highlight-color: transparent;
+	transition: font-variation-settings 400ms ease;
 }
 
 a:where(:hover, :focus) {
+	--casl: "CASL" 1;
+	--wght: "wght" 700;
 	--underline-thickness: 0.15em;
-	--underline-offset: calc(1 * var(--underline-thickness));
-	/* background-color: var(--bg-hover); */
 	color: var(--text);
 }
 

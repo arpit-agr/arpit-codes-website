@@ -53,7 +53,7 @@
 
 .heart,
 .hash {
-	block-size: var(--step-4);
+	block-size: var(--step-3);
 }
 
 .squiggle,

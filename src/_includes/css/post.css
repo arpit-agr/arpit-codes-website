@@ -1,9 +1,25 @@
 .article-container {
-	max-width: min(36em, 100%);
-	/* margin-inline: auto; */
+	display: grid;
+	grid-template-areas:
+		"title"
+		"date"
+		"content";
+	gap: var(--gutter);
+	align-items: baseline;
+	max-width: min(calc(1.414 * var(--step-10)), 100%);
+	margin-inline: auto;
+}
+
+@media (min-width: 30em) {
+	.article-container {
+		grid-template-areas:
+			"date title"
+			"date content";
+	}
 }
 
 .article-container h1 {
+	grid-area: title;
 	font-size: var(--step-3);
 	font-family: var(--font-plain);
 	font-style: normal;
@@ -12,14 +28,15 @@
 }
 
 .layout-post time {
+	grid-area: date;
 	display: block;
 }
 
 .article-body {
-	--flow-space: 2em;
+	grid-area: content;
 }
 
-.article-body * {
+.article-body > * {
 	--flow-space: 1em;
 }
 

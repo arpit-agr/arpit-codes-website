@@ -32,9 +32,9 @@
 	animation-delay: 1.98s;
 }
 
-.has-js .desc > *:nth-child(3) {
+/* .has-js .desc > *:nth-child(3) {
 	animation-delay: 1.32s;
-}
+} */
 
 .wordmark {
 	align-self: flex-end;

@@ -1,9 +1,5 @@
 {%- extends "layouts/base.html" -%}
 
-{%- block prefetch -%}
-  <link rel="prefetch" href="/projects/" as="document">
-{%- endblock -%}
-
 {%- block content -%}
   <div class="vh">
     <h1>{{ title }}</h1>
@@ -15,8 +11,9 @@
   </div>
 {%- endblock -%}
 
-{%- block bodyScripts -%}
-  <!-- TODO: check for performance -->
+<!-- TODO: Find a simple solution because this feels over-enginereed -->
+<!-- Commented out using njk comments -->
+{# {%- block bodyScripts -%}
   <script 
     src="/scripts/aside.js" 
     fetchpriority="low"
@@ -29,4 +26,4 @@
     defer 
     async>
   </script>
-{%- endblock -%}
+{%- endblock -%} #}

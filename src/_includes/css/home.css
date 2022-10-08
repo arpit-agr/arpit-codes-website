@@ -36,11 +36,9 @@
 	animation-delay: 1.32s;
 }
 
-#logo {
+.wordmark {
 	align-self: flex-end;
-	/* inline-size: var(--step-10); */
 	inline-size: 100%;
-	max-inline-size: calc(80rem * 0.66);
 	block-size: auto;
 	opacity: 0;
 	animation-name: fade-in;
@@ -49,7 +47,7 @@
 	animation-timing-function: var(--ease-2);
 }
 
-#logo path {
+.wordmark path {
 	fill: var(--text);
 }
 

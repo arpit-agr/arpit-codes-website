@@ -15,3 +15,10 @@
 	unicode-range: U+20-7E;
 	src: url("/fonts/PPEditorialNew-Italic-subset.woff2") format("woff2");
 }
+
+@font-face {
+	font-family: "Recursive";
+	src: url("/fonts/recursive.woff2") format("woff2-variations");
+	font-weight: 300 1000;
+	font-display: swap;
+}

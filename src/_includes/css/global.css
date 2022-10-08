@@ -1,8 +1,7 @@
 /* font, underline */
 :root {
-	--font-plain: -apple-system, BlinkMacSystemFont, helvetica neue, helvetica,
-		segoe ui, roboto, arial, sans-serif;
-	--font-special: "pp_editorial_newitalic", Georgia, "Times New Roman", serif;
+	--font-plain: "Recursive", sans-serif;
+	--font-special: "Recursive", sans-serif;
 	--letter-spacing-0: -0.015em;
 	--letter-spacing-1: 0.015em;
 	--letter-spacing-2: 0.03em;
@@ -10,6 +9,12 @@
 	--underline-thickness: 0.075em;
 	--underline-offset: calc(4 * var(--underline-thickness));
 	--svg-thickness: 2px;
+
+	--mono: "MONO" 0;
+	--casl: "CASL" 0;
+	--wght: "wght" 400;
+	--slnt: "slnt" 0;
+	--CRSV: "CRSV" 0;
 }
 
 /* size and space */
@@ -81,6 +86,10 @@ body {
 	gap: var(--grid-gap);
 }
 
+* {
+	font-variation-settings: var(--mono), var(--casl), var(--wght), var(--slnt),
+		var(--CRSV);
+}
 main {
 	--stack-gap: var(--space-l-xl);
 	--stack-horizontal-alignment: space-between;

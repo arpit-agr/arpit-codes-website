@@ -7,7 +7,7 @@
 
 .desc {
 	order: -1;
-	max-width: 38ch;
+	max-width: 45ch;
 	font-size: var(--step-0);
 }
 

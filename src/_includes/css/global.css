@@ -151,15 +151,27 @@ summary {
 }
 
 sup {
-	position: relative;
+	--mono: "MONO" 1;
+	/* position: relative;
 	inset-block-start: auto;
 	vertical-align: text-bottom;
-	font-feature-settings: "numr";
-	/* font-size: var(--step--1); */
+	font-feature-settings: "numr"; */
+	font-size: var(--step--1);
 }
 
 sup a {
 	text-decoration: none;
+}
+
+hr {
+	--underline-thickness: 0.3em;
+	border-style: solid;
+	border-block-end-width: var(--underline-thickness);
+	border-image: var(--hr) 0 3 12 3 stretch stretch;
+}
+
+time {
+	font-size: var(--step--1);
 }
 
 img {
@@ -182,15 +194,4 @@ img {
 
 [tabindex="-1"]:focus {
 	outline: none;
-}
-
-hr {
-	--underline-thickness: 0.3em;
-	border-style: solid;
-	border-block-end-width: var(--underline-thickness);
-	border-image: var(--hr) 0 3 12 3 stretch stretch;
-}
-
-time {
-	font-size: var(--step--1);
 }

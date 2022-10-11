@@ -12,10 +12,7 @@
   <h3>{{ event.title }}</h3>
   <div>
     <time class="event-datetime" datetime={{ event.date | dump | safe }}>
-      {{ event.date.toLocaleString('en-IN', {
-        timeStyle: "long",
-        dateStyle: "medium"
-      }) }}
+      {{ event.date | postDateTime }}
     </time>
     <button id="convert-time" class="button-link">
       <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="12">

@@ -34,7 +34,10 @@ module.exports = function(eleventyConfig) {
     }
   });
   eleventyConfig.addFilter("postDate", (dateObj) => {
-		return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
+		return DateTime.fromJSDate(dateObj).setZone("Asia/Calcutta").toLocaleString(DateTime.DATE_MED);
+	});
+  eleventyConfig.addFilter("postDateTime", (dateObj) => {
+		return DateTime.fromJSDate(dateObj).setZone("Asia/Calcutta").setLocale('en-IN').toFormat('ff ZZZZ');
 	});
   eleventyConfig.addFilter("addNbsp", (str) => {
     if (!str) {

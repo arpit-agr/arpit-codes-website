@@ -27,7 +27,7 @@
 	font-weight: 700;
 }
 
-.layout-post time {
+.publish-date {
 	grid-area: date;
 	display: block;
 }

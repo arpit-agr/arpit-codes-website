@@ -111,21 +111,25 @@ main {
 	margin-inline-start: auto;
 }
 
-h1 {
+h1,
+h2,
+h3 {
 	--wght: "wght" 700;
 	font-family: var(--font-special);
-	font-size: var(--step-4);
-	line-height: 1em;
 	letter-spacing: var(--letter-spacing--2);
+	line-height: 1.1;
+}
+
+h1 {
+	font-size: var(--step-4);
 }
 
 h2 {
-	font-family: var(--font-special);
-	font-style: italic;
 	font-size: var(--step-2);
-	font-weight: 400;
-	line-height: 1;
-	letter-spacing: var(--letter-spacing-0);
+}
+
+h3 {
+	font-size: var(--step-1);
 }
 
 :where(a) {
@@ -176,6 +180,10 @@ time {
 
 img {
 	transform: rotate(var(--img-rotate));
+}
+
+strong {
+	--wght: "wght" 700;
 }
 
 /* img:where(:hover, :focus) {

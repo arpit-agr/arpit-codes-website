@@ -1,5 +1,5 @@
 ---
-title: "'Add to calendar' links"
+title: "'Add to calendar' links for events"
 date: 2022-10-11
 event:
   title: "Arpit's Awesome Event"

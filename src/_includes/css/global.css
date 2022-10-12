@@ -199,6 +199,13 @@ strong {
 	--wght: "wght" 700;
 }
 
+em {
+	--slnt: "slnt" -15;
+	--CRSV: "CRSV" 1;
+	--casl: "CASL" 1;
+	font-style: normal;
+}
+
 /* img:where(:hover, :focus) {
 	filter: url(#noise);
 	transform: rotate(var(--img-rotate)) translate(-5px, -5px);

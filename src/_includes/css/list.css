@@ -1,6 +1,6 @@
 .list li {
 	--columns: 1fr min-content;
-	--grid-gap: 0 var(--space-3xs-2xs);
+	--grid-gap: 0 var(--space-2xs-xs);
 	position: relative;
 	display: grid;
 	gap: var(--grid-gap);
@@ -15,7 +15,7 @@
 
 .list a {
 	padding-block: var(--li-padding-block);
-	padding-inline: var(--li-padding-inline);
+	/* padding-inline: var(--li-padding-inline); */
 	text-decoration-line: none;
 	text-transform: capitalize;
 }

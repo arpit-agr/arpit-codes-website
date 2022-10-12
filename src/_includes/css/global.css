@@ -149,6 +149,12 @@ a:where(:hover, :focus) {
 	color: var(--text);
 }
 
+
+.btn {
+	position: relative;
+	padding: var(--btn-padding-block) var(--btn-padding-inline);
+}
+
 summary {
 	cursor: pointer;
 	touch-action: manipulation;

@@ -21,3 +21,8 @@
 .nav a:hover {
 	background-color: unset;
 }
+
+nav .btn {
+	--btn-padding-block: var(--space-xs);
+	--btn-padding-inline: var(--space-3xs);
+}

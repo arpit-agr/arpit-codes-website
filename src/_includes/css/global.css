@@ -24,8 +24,8 @@
 	--min-block-size: 100vh;
 	--max-inline-size: min(90rem, 100vw);
 	--gutter: var(--space-s-m);
-	--btn-padding-block: var(--space-xs);
-	--btn-padding-inline: var(--space-3xs);
+	--btn-padding-block: var(--space-3xs);
+	--btn-padding-inline: var(--space-2xs);
 	--li-padding-block: var(--space-2xs);
 	--li-padding-inline: calc(var(--space-2xs) / 2);
 }
@@ -149,6 +149,13 @@ a:where(:hover, :focus) {
 	color: var(--text);
 }
 
+button {
+	outline: var(--underline-thickness) solid currentColor;
+	border: none;
+	border-radius: var(--underline-thickness);
+	padding: var(--btn-padding-inline) var(--btn-padding-block);
+	background-color: inherit;
+}
 
 .btn {
 	position: relative;

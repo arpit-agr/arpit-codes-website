@@ -1,0 +1,31 @@
+{%- extends "layouts/base.html" -%}
+
+{%- block content -%}
+  <div class="header cluster">
+    <h1>{{ title }}</h1>
+    <ul class="page-desc flow" role="list">
+      {%- for item in description -%}
+        <li>
+          {{ item | safe }}
+        </li>
+      {%- endfor -%}
+    </ul>
+    <!-- {% include "snippets/hash.html" %} -->
+  </div>
+  <article class="flow">
+    {{ content | safe }}
+    <div class="flow">
+      <p>You can also find me on:</p>
+      <ul class="socials cluster" role="list">
+        {%- for item in socials -%}
+          <li class="cluster">
+            <span>{% include item.icon %}</span>
+            <a href="{{ item.url }}">
+              {{ item.text | safe }}
+            </a>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </article>
+{%- endblock -%}

@@ -20,7 +20,8 @@
 	stroke-dashoffset: 361px;
 }
 
-:where(.nav a:hover, .nav [aria-current="page"], .nav [data-state="active"])
+:where(.nav a:hover, .nav [aria-current="page"], .nav
+		[data-state="active"], .back-to-blog:hover)
 	.circle {
 	--offset: 180px;
 }

@@ -3,7 +3,7 @@
 {%- if page.url == '/' -%}
   {%- set pageTitle = site.name -%}
 {%- else -%}
-  {%- set pageTitle = title + ' | ' + site.name -%}
+  {%- set pageTitle = title + ' / ' + site.name -%}
 {%- endif -%}
 
 {% set currentUrl = site.url + page.url %}

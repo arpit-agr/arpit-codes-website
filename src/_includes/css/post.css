@@ -1,3 +1,37 @@
+@media (min-width: 30.0625em) {
+	.layout-post .nav ul {
+		--cluster-horizontal-alignment: flex-end;
+	}
+}
+
+.layout-post main {
+	--stack-gap: var(--space-l-xl);
+	--stack-vertical-alignment: flex-start;
+}
+
+.layout-post p {
+	max-inline-size: unset;
+}
+
+.back-to-blog {
+	inline-size: fit-content;
+	text-decoration: none;
+}
+
+.back-to-blog:hover {
+	color: inherit;
+}
+
+@media (min-width: 30.0625em) {
+	.back-to-blog {
+		--btn-padding-block: var(--gutter);
+		--btn-padding-inline: var(--space-3xs);
+		position: absolute;
+		inset-block-start: 0;
+		color: var(--text-secondary);
+	}
+}
+
 .article-container {
 	display: grid;
 	grid-template-areas:
@@ -10,7 +44,7 @@
 	margin-inline: auto;
 }
 
-@media (min-width: 30em) {
+@media (min-width: 30.0625em) {
 	.article-container {
 		grid-template-areas:
 			"date title"
@@ -42,7 +76,7 @@
 
 .article-body li + li {
 	--flow-space: 1ch;
-	margin-top: var(--flow-space, 1em);
+	margin-block-start: var(--flow-space, 1em);
 }
 
 .footnotes {

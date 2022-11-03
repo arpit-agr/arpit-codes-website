@@ -11,8 +11,7 @@
   {% include "./footer.css" %}
   {% include "./list.css" %}
   {% include "./svg.css" %}
-  {% include "./aside.css" %}
-  {% include "./page-desc.css" %}
+  {# {% include "./aside.css" %} #}
   {% if layout == "layouts/home.html" %}
     {% include "./home.css" %}
   {% endif %}
@@ -21,6 +20,9 @@
   {% endif %}
   {% if layout == "layouts/post.html" %}
     {% include "./post.css" %}
+  {% endif %}
+  {% if layout == "layouts/contact.html" %}
+    {% include "./contact.css" %}
   {% endif %}
   {% include "./utilities.css" %}
   {% include "./keyframes.css" %}

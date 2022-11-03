@@ -2,12 +2,12 @@
 
 .layout-home main {
 	--stack-horizontal-alignment: flex-start;
-	--stack-vertical-alignment: space-between;
 }
 
-.desc {
+.header {
 	order: -1;
-	max-width: 45ch;
+	/* max-inline-size: 47ch; */
+	max-inline-size: 27em;
 	font-size: var(--step-0);
 }
 
@@ -21,6 +21,19 @@
 	fill: var(--text);
 }
 
+.wordmark[data-variant="full-name"] {
+	display: none;
+}
+
+@media (min-width: 30.0625em) {
+	.wordmark[data-variant="full-name"] {
+		display: unset;
+	}
+	.wordmark[data-variant="given-name"] {
+		display: none;
+	}
+}
+
 /* headings use a special font */
 /* on the home page the heading is visually hidden */
 /* we apply the plain font to it so that the special font is not requested */
@@ -30,13 +43,13 @@
 
 @media (prefers-reduced-motion: no-preference) {
 	.wordmark * {
-		opacity: 0;
+		/* opacity: 0; */
 		animation-name: fade-in;
 		animation-duration: 0.66s;
 		animation-fill-mode: forwards;
 		animation-timing-function: var(--ease-2);
-		transform: translateY(15ex);
-}
+		transform: translateY(25ex);
+	}
 
 	.wordmark :nth-child(2) {
 		animation-delay: 0.05s;
@@ -72,7 +85,13 @@
 		animation-delay: 0.6s;
 	}
 	.wordmark :nth-child(n + 13) {
+		opacity: 0;
 		transform: translateY(0);
 		animation-delay: 0.88s;
+	}
+	.wordmark[data-variant="given-name"] :nth-child(n + 6) {
+		opacity: 0;
+		transform: translateY(0);
+		animation-delay: 0.44s;
 	}
 }

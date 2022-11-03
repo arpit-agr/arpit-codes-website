@@ -1,6 +1,7 @@
 ---
 title: "Projects"
-subtitle: "more to come"
+description:
+  - "more to come"
 displayOrder: 2
 eleventyNavigation:
   key: "Projects"

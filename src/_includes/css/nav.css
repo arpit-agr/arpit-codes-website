@@ -4,17 +4,21 @@
 	color: var(--text-secondary);
 }
 
-@media (min-width: 30em) {
+@media (min-width: 30.0625em) {
 	.nav ul {
-		--cluster-horizontal-alignment: unset;
+		--cluster-horizontal-alignment: flex-start;
 	}
-	.nav ul > :last-child {
-		margin-inline-start: auto;
+}
+
+@media (min-width: 60em) {
+	.nav ul {
+		--cluster-horizontal-alignment: flex-end;
 	}
 }
 
 .nav a {
 	position: relative;
+	display: inline-block;
 	text-decoration: none;
 }
 
@@ -23,6 +27,6 @@
 }
 
 nav .btn {
-	--btn-padding-block: var(--space-xs);
+	--btn-padding-block: var(--gutter);
 	--btn-padding-inline: var(--space-3xs);
 }

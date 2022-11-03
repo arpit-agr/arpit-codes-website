@@ -1,0 +1,14 @@
+.layout-contact main {
+	--stack-gap: var(--space-l-xl);
+	--stack-vertical-alignment: flex-start;
+}
+
+.socials li {
+	--cluster-gap: 0.5ch;
+}
+
+.social-icon {
+	/* display: inline-block; */
+	height: calc(1ex * var(--line-height));
+	width: auto;
+}

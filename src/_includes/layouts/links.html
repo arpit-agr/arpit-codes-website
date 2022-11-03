@@ -3,14 +3,14 @@
 {%- block content -%}
   <div class="header cluster">
     <h1>{{ title }}</h1>
-    <ul class="page-desc" role="list">
+    <ul class="page-desc flow" role="list">
       {%- for item in description -%}
         <li>
           {{ item | safe }}
         </li>
       {%- endfor -%}
     </ul>
-    {% include "snippets/hash.html" %}
+    <!-- {% include "snippets/hash.html" %} -->
   </div>
   {{ content | safe }}
   <ol class="links list" role="list" reversed>

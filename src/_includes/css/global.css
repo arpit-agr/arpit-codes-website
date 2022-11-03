@@ -51,7 +51,7 @@
 /* color */
 :root {
 	--bg: hsl(0deg 0% 99%);
-	--bg-hover: hsla(0, 0%, 6%, 0.08);
+	--bg-hover: hsla(0, 0%, 6%, 0.04);
 	--text: hsl(0deg 0% 1%);
 	--text-secondary: hsla(0, 0%, 1%, 0.8);
 	--underline-color: var(--text);
@@ -61,7 +61,7 @@
 @media (prefers-color-scheme: dark) {
 	:root {
 		--bg: hsl(0deg 0% 1%);
-		--bg-hover: hsla(0, 0%, 94%, 0.16);
+		--bg-hover: hsla(0, 0%, 94%, 0.08);
 		--text: hsl(0deg 0% 99%);
 		--text-secondary: hsla(0, 0%, 100%, 0.8);
 	}

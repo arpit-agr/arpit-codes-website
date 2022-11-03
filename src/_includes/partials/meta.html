@@ -1,7 +1,7 @@
 {% set siteTitle = site.name %}
 
 {%- if page.url == '/' -%}
-  {%- set pageTitle = title -%}
+  {%- set pageTitle = site.name -%}
 {%- else -%}
   {%- set pageTitle = title + ' | ' + site.name -%}
 {%- endif -%}

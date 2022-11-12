@@ -49,6 +49,11 @@
 		grid-template-areas:
 			"date title"
 			"date content";
+
+		padding: var(--space-l-xl) var(--space-s-m);
+		background: var(--article-bg);
+		border: var(--underline-thickness) solid var(--article-border);
+		border-radius: var(--underline-thickness);
 	}
 }
 

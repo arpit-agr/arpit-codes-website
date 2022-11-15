@@ -5,6 +5,7 @@ const imageShortcode = require("./src/_11ty/shortcodes/image");
 const sortByDisplayOrder = require('./src/_11ty/utils/sort-by-display-order.js');
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const { DateTime } = require("luxon");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.setQuietMode(true);
@@ -12,6 +13,7 @@ module.exports = function(eleventyConfig) {
   //Plugins
   eleventyConfig.addPlugin(directoryOutputPlugin);
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
+  eleventyConfig.addPlugin(pluginRss);
 
   //Passthrough copy
   eleventyConfig.addPassthroughCopy("./src/fonts");

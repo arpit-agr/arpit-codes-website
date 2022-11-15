@@ -106,6 +106,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("links", function(collectionApi) {
     return collectionApi.getFilteredByGlob("./src/links/*.md");
   });
+  eleventyConfig.addCollection("nature", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("./src/nature/*.md");
+  });
 
   //Markdown
   let markdownIt = require("markdown-it");

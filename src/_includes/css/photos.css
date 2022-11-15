@@ -1,0 +1,4 @@
+.layout-photos main {
+	--stack-gap: var(--space-l-xl);
+	--stack-vertical-alignment: flex-start;
+}

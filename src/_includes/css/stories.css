@@ -1,0 +1,96 @@
+open-stories {
+	font-size: var(--step--1);
+}
+
+.display-pic {
+	border-radius: 50%;
+	aspect-ratio: 1;
+	width: 100%;
+	height: 100%;
+}
+
+open-stories:not(:defined),
+open-stories::part(button) {
+	position: relative;
+
+	display: grid;
+	place-content: center;
+	width: var(--step-4);
+	height: var(--step-4);
+	box-shadow: inset 0 0 0 var(--step--6) var(--bg);
+	border: var(--step--6) solid var(--text);
+	border-radius: 50%;
+	background-color: var(--text);
+	color: var(--bg);
+	font-weight: 500;
+	font-size: var(--step--1);
+	font-family: inherit;
+
+	/* width: var(--step-5);
+	height: var(--step-5);
+	border: none;
+	background: radial-gradient(
+			circle at center,
+			var(--text) 45%,
+			transparent 45%,
+			var(--bg) 75%
+		),
+		radial-gradient(
+				circle at center,
+				var(--text) 2px,
+				var(--bg) 1px,
+				var(--bg) 5px
+			)
+			50% 50%/8px 8px repeat; */
+}
+
+open-stories::part(button) {
+	cursor: pointer;
+}
+
+open-stories::part(button):hover {
+	background-color: var(--text);
+	border-color: var(--text);
+	color: var(--bg);
+}
+
+open-stories:not(:defined),
+open-stories.is-empty::part(button) {
+	pointer-events: none;
+	opacity: 0.5;
+	overflow: hidden;
+	position: relative;
+	cursor: not-allowed;
+}
+
+open-stories:not(:defined):before,
+open-stories.is-empty::part(button):before {
+	display: block;
+	content: "";
+	border-left: var(--step--6) solid;
+	position: absolute;
+	transform: rotate(-45deg);
+	top: 0;
+	left: 0;
+	width: 150%;
+	height: 150%;
+	transform-origin: top left;
+}
+
+.is-read::part(button) {
+	border-color: var(--text-secondary);
+	background-color: var(--text-secondary);
+}
+
+open-stories::part(dialog) {
+	width: auto;
+	height: auto;
+	aspect-ratio: 9/16;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	overflow: visible;
+
+	max-height: calc(var(--min-block-size) - var(--space-6xs-xl));
+	max-width: 100%;
+}

@@ -1,0 +1,53 @@
+---
+permalink: nature-stories.json
+eleventyExcludeFromCollections: true
+metadata:
+  title: "My favorite nature shots"
+  subtitle: "A feed of my favorite nature shots"
+  language: en
+  author:
+    name: "Arpit"
+    url: "https://arpit.codes/"
+---
+{%- set siteUrl =  site.url -%}
+{%- if env.eleventy === "development" -%}
+  {%- set siteUrl =  "/" -%}
+{%- endif -%}
+
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "{{ metadata.title }}",
+  "language": "{{ metadata.language }}",
+  "home_page_url": "{{ siteUrl }}",
+  "feed_url": "{{ permalink | absoluteUrl(siteUrl) }}",
+  "description": "{{ metadata.subtitle }}",
+  "author": {
+    "name": "{{ metadata.author.name }}",
+    "url": "{{ metadata.author.url }}"
+  },
+  "_open_stories": {
+		"version": "0.0.8"
+	},
+  "items": [
+    {%- for post in collections.nature | reverse %}
+    {%- set id = post.date | isoDate + "-" + post.fileSlug | slugify -%}
+		{%- set postUrl = "/images/" + post.data.url -%}
+    {%- set absolutePostUrl = postUrl | absoluteUrl(siteUrl) %}
+    {
+      "id": "{{ id }}",
+      "url": "{{ absolutePostUrl }}",
+      "title": "{{ post.data.caption }}",
+      "content_html": {% if post.templateContent %}{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | dump | safe }}{% else %}"<img src='{{ absolutePostUrl }}' alt='{{ post.data.alt }}'>"{% endif %},
+      "date_published": "{{ post.date | toISO }}",
+      "_open_stories": {
+				"type": "image",
+				"mime_type": "image/jpg",
+				"url": "{{ absolutePostUrl }}",
+				"caption": "{{ post.data.caption }}",
+				"alt": "{{ post.data.alt }}"
+			}
+    }
+    {% if not loop.last %},{% endif %}
+    {%- endfor %}
+  ]
+}

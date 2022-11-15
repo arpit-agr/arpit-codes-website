@@ -50,9 +50,12 @@
 
 /* color */
 :root {
-	--bg: hsl(0deg 0% 99%);
+	--white: hsl(0deg 0% 99%);
+	--black: hsl(0deg 0% 1%);
+
+	--bg: var(--white);
 	--bg-hover: hsla(0, 0%, 96%);
-	--text: hsl(0deg 0% 1%);
+	--text: var(--black);
 	--text-secondary: hsla(0, 0%, 1%, 0.8);
 	--underline-color: var(--text);
 	--border-color: var(--text-secondary);
@@ -62,9 +65,9 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--bg: hsl(0deg 0% 1%);
+		--bg: var(--black);
 		--bg-hover: hsla(0, 0%, 9%);
-		--text: hsl(0deg 0% 99%);
+		--text: var(--white);
 		--text-secondary: hsla(0, 0%, 100%, 0.8);
 		--article-bg: hsl(0deg 0% 1% / 80%);
 		--article-border: hsl(0deg 0% 100% / 10%);

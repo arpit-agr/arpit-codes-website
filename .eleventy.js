@@ -49,6 +49,15 @@ module.exports = function(eleventyConfig) {
     title = title.replace(/"(.*)"/g, '\\"$1\\"');
     return title;
   });
+  eleventyConfig.addFilter("isoDate", (dateObj) => {
+		return DateTime.fromJSDate(dateObj).setZone("Asia/Calcutta").toISODate();
+	});
+  eleventyConfig.addFilter("toISO", (dateObj) => {
+    return DateTime.fromJSDate(dateObj).setZone("Asia/Calcutta").toISO();
+  });
+  eleventyConfig.addFilter("nextDay", (dateObj) => {
+    return DateTime.fromJSDate(dateObj).setZone("Asia/Calcutta").plus({ days: 1 });
+  });
 
   //SHORTCODE
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);

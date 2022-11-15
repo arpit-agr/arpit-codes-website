@@ -1,0 +1,35 @@
+{%- extends "layouts/base.html" -%}
+
+{%- block content -%}
+  <div class="header cluster">
+    <h1>{{ title }}</h1>
+    <!-- <ul class="page-desc flow" role="list">
+      {%- for item in description -%}
+        <li>
+          {{ item | safe }}
+        </li>
+      {%- endfor -%}
+    </ul> -->
+  </div>
+  <article class="flow">
+    {{ content | safe }}
+    <h2>Stories</h2>
+    <open-stories
+      src="/nature-stories.json"
+      duration="15"
+    >
+      nature
+      <span>× {{ collections.nature | length }}</span>
+    </open-stories>
+    <!-- <hr>
+    <h2>Photos</h2> -->
+  </article>
+{%- endblock -%}
+
+{%- block bodyScripts -%}
+  <script
+  src="/scripts/stories.js"
+  type="module"
+  defer
+  ></script>
+{%- endblock -%}

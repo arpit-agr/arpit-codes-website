@@ -199,6 +199,12 @@ sup {
 	inset-block-start: auto;
 	vertical-align: text-bottom;
 }
+
+@supports (font-variant-position: super) {
+	sup {
+		--sups: "____";
+		font-variant-position: super;
+	}
 }
 
 sup a {

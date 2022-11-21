@@ -1,11 +1,10 @@
 {%- extends "layouts/base.html" -%}
 
 {%- block content -%}
-  <div class="vh">
-    <h1>{{ title }}</h1>
-  </div>
-  {% include "snippets/wordmark.html" %}
-  {% include "snippets/wordmark-mobile.html" %}
+  <h1>
+    {% include "snippets/wordmark.html" %}
+    {% include "snippets/wordmark-mobile.html" %}
+  </h1>
   <div class="header flow">
     {{ content | safe }}
   </div>

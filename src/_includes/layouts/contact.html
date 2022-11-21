@@ -20,7 +20,10 @@
         {%- for item in socials -%}
           <li class="cluster">
             <span>{% include item.icon %}</span>
-            <a href="{{ item.url }}">
+            <a
+              {% if item.rel %} rel="{{ item.rel }}" {% endif %}
+              href="{{ item.url }}"
+            >
               {{ item.text | safe }}
             </a>
           </li>

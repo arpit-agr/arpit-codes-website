@@ -15,6 +15,12 @@ socials:
       url: "https://twitter.com/ArpitCodes",
       icon: "snippets/twitter.html",
     },
+    {
+      text: "Mastodon",
+      url: "https://indieweb.social/@arpit",
+      icon: "snippets/mastodon.html",
+      rel: "me",
+    },
   ]
 displayOrder: 5
 eleventyNavigation:

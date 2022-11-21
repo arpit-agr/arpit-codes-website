@@ -12,11 +12,15 @@
 	--underline-offset: calc(2 * var(--underline-thickness));
 	--svg-thickness: 2px;
 
-	--mono: "MONO" 0;
 	--casl: "CASL" 0;
 	--wght: "wght" 400;
 	--slnt: "slnt" 0;
-	--CRSV: "CRSV" 0;
+	--sups: "sups" off;
+}
+
+* {
+	font-variation-settings: var(--casl), var(--wght), var(--slnt);
+	font-feature-settings: var(--sups);
 }
 
 /* size and space */
@@ -90,11 +94,6 @@ body {
 	background-repeat: no-repeat no-repeat;
 	background-position: center center;
 	background-size: cover;
-}
-
-* {
-	font-variation-settings: var(--mono), var(--casl), var(--wght), var(--slnt),
-		var(--CRSV);
 }
 
 main {
@@ -195,12 +194,11 @@ summary {
 }
 
 sup {
-	--mono: "MONO" 1;
-	/* position: relative;
+	--sups: "sups" on;
+	position: relative;
 	inset-block-start: auto;
 	vertical-align: text-bottom;
-	font-feature-settings: "numr"; */
-	font-size: var(--step--1);
+}
 }
 
 sup a {
@@ -233,7 +231,6 @@ strong {
 
 em {
 	--slnt: "slnt" -15;
-	--CRSV: "CRSV" 1;
 	--casl: "CASL" 1;
 	font-style: normal;
 }

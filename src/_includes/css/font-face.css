@@ -1,24 +1,7 @@
 @font-face {
-	font-family: "pp_editorial_newitalic";
-	font-style: italic;
-	font-weight: normal;
-	font-display: swap;
-	unicode-range: U+20-7E;
-	src: url("/fonts/PPEditorialNew-Italic-subset.woff") format("woff");
-}
-
-@font-face {
-	font-family: "pp_editorial_newitalic";
-	font-style: italic;
-	font-weight: normal;
-	font-display: swap;
-	unicode-range: U+20-7E;
-	src: url("/fonts/PPEditorialNew-Italic-subset.woff2") format("woff2");
-}
-
-@font-face {
 	font-family: "Recursive";
-	src: url("/fonts/recursive.woff2") format("woff2-variations");
-	font-weight: 300 1000;
+	font-style: oblique 0deg 15deg;
+	font-weight: 300 800;
 	font-display: swap;
+	src: url("/fonts/recursive-partial-subset.woff2") format("woff2-variations");
 }

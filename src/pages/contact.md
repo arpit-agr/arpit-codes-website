@@ -29,3 +29,5 @@ layout: "layouts/contact.html"
 ---
 
 You can contact me at <hello@arpit.codes> if you want to chat about a project. I’d love to hear from you.
+
+---

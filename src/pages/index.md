@@ -13,6 +13,8 @@ layout: "layouts/home.html"
 
 Hello, I'm Arpit Agrawal, a [front-of-the-frontend]({{ frontend.url }} "{{ frontend.title }}") web developer from India. Basically, **_I build websites_**.
 
+---
+
 I believe in building the right website and building the website right.
 
 You can contact me at <hello@arpit.codes> if you want to chat about a project. I’d love to hear from you.

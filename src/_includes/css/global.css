@@ -23,6 +23,18 @@
 	font-feature-settings: var(--sups);
 }
 
+/* @media (prefers-reduced-data: reduce) {
+	:root {
+		--font-plain: sans-serif;
+		--font-special: sans-serif;
+	}
+
+	* {
+		font-variation-settings: unset;
+		font-feature-settings: unset;
+	}
+} */
+
 /* size and space */
 :root {
 	--min-block-size: 100vh;

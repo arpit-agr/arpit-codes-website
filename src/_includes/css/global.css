@@ -175,6 +175,18 @@ a:where(:hover, :focus) {
 	color: var(--text);
 }
 
+[href*="mailto"] {
+	white-space: nowrap;
+}
+
+[href*="mailto"]:before {
+	content: var(--mail);
+	alt: "";
+	vertical-align: middle;
+	margin-right: 0.5ch;
+	line-height: 1;
+}
+
 button {
 	outline: var(--underline-thickness) solid currentColor;
 	border: none;

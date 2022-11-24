@@ -222,6 +222,7 @@ sup {
 	position: relative;
 	inset-block-start: auto;
 	vertical-align: text-bottom;
+	user-select: none;
 }
 
 @supports (font-variant-position: super) {

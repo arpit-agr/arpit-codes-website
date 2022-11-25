@@ -169,7 +169,7 @@ function css(t) {
         }
 				#metadata-details[open] > summary {
 					padding-block-end: 0;
-					color: var(--text-secondary)
+					color: #fffc;
 				}
         #caret {
             transition: transform .3s;

@@ -1,0 +1,22 @@
+{%- extends "layouts/base.html" -%}
+
+{%- block injectBody -%}
+  data-variant="inverted"
+{%- endblock -%}
+
+{%- block content -%}
+  {%- set imageUrl = "src/images/" + url -%}
+  <div class="story-container cluster">
+    <h1 class="title">{{ title | title }}</h1>
+    <div>
+      {% image imageUrl , alt, sizes, loading, class, fetchPriority %}
+      <time class="publish-date" datetime={{ date | dump | safe }}>
+        {{ date | postDate }}
+      </time>
+    </div>
+  </div>
+  <a class="back-to-archive btn" href={{ backToArchive.url }}>
+    {{ backToArchive.text }}
+    {% include "snippets/circle.html" %}
+  </a>
+{%- endblock -%}

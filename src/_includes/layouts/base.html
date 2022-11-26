@@ -23,7 +23,10 @@
   {%- block prefetch -%}{%- endblock -%}
   <link rel="me" href="https://indieweb.social/@arpit" />
 </head>
-<body class="layout-{{ layout | replace("layouts/", "") | replace(".html", "") }} wrapper">
+<body 
+  class="layout-{{ layout | replace("layouts/", "") | replace(".html", "") }} wrapper"
+  {%- block injectBody -%}{%- endblock -%}
+>
   <a href="#main" class="skip-to-main step--1">Skip to content</a>
   <header class="site-head">
     {% include "partials/nav.html" %}

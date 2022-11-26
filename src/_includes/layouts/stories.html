@@ -1,0 +1,85 @@
+{%- extends "layouts/base.html" -%}
+
+{%- block injectBody -%}
+  data-variant="inverted"
+{%- endblock -%}
+
+{%- block content -%}
+  <div class="header stack">
+    <h1>{{ title }}</h1>
+  </div>
+  {{ content | safe }}
+  <div class="flow">
+    <ol class="reel" role="list">
+      {%- for post in collections.stories -%}
+        {%- set imageUrl = "src/images/" + post.data.url -%}
+        {%- set alt = post.data.alt -%}
+        {%- set sizes = post.data.sizes -%}
+        {%- set loading = post.data.loading -%}
+        {%- set class = post.data.class -%}
+        {%- set fetchPriority = post.data.fetchPriority -%}
+        <li>
+          <div class="story-container cluster">
+            <h2 class="title">{{ post.data.title | title }}</h2>
+            <div class="flow">
+              {% image imageUrl , alt, sizes, loading, class, fetchPriority %}
+              <div class="metadata cluster">
+                <time
+                  class="publish-date"
+                  datetime={{ post.data.date | dump | safe }}
+                  >
+                  {{ post.data.date | postDate }}
+                </time>
+                <!-- <span aria-hidden="true">/</span>
+                <a class="step--1" href="{{ post.url }}">
+                  View <span class="vh">{{ post.data.title }}</span> image EXIF data
+                </a> -->
+              </div>
+            </div>
+          </div>
+        </li>
+      {%- endfor -%}
+    </ol>
+    <hr>
+    <details class="snap-input flow">
+      <summary>Scroll snap</summary>
+      <div class="flow">
+        <p>{{ scrollSnap.desc | addNbsp | safe }}</p>
+        <div class="snap-input cluster">
+          <label for="snap">{{ scrollSnap.label }}</label>
+          <input type="checkbox" id="snap" checked>
+        </div>
+        <p class="snap-input-unchecked flow">
+          {{ scrollSnap.unchecked | addNbsp | safe }}
+        </p>
+      </div>
+    </details>
+  </div>
+{%- endblock -%}
+
+{%- block bodyScripts -%}
+  <!-- defer must not be used if the src attribute is absent (i.e. for inline scripts) -->
+  <script>
+    (function() {
+      const className = 'reel';
+      const reels = Array.from(document.querySelectorAll(`.${className}`));
+      const toggleOverflowClass = elem => {
+        elem.classList.toggle('overflowing', elem.scrollWidth > elem.clientWidth);
+      };
+
+      for (let reel of reels) {
+        if ('ResizeObserver' in window) {
+          new ResizeObserver(entries => {
+            toggleOverflowClass(entries[0].target);
+          }).observe(reel);
+        }
+
+        if ('MutationObserver' in window) {
+          new MutationObserver(entries => {
+            toggleOverflowClass(entries[0].target);
+          }).observe(reel, {childList: true});
+        }
+      }
+    })();
+  </script>
+{%- endblock -%}

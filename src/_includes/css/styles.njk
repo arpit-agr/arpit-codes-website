@@ -26,6 +26,9 @@
   {% endif %}
   {% if layout == "layouts/photos.html" %}
     {% include "./photos.css" %}
+    {% include "./stories-element.css" %}
+  {% endif %}
+  {% if layout == "layouts/stories.html" or "layouts/story.html" %}
     {% include "./stories.css" %}
   {% endif %}
   {% include "./utilities.css" %}

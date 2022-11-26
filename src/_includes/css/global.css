@@ -217,6 +217,25 @@ button {
 	padding: var(--btn-padding-block) var(--btn-padding-inline);
 }
 
+.back-to-archive {
+	inline-size: fit-content;
+	text-decoration: none;
+}
+
+.back-to-archive:hover {
+	color: inherit;
+}
+
+@media (min-width: 30.0625em) {
+	.back-to-archive {
+		--btn-padding-block: var(--gutter);
+		--btn-padding-inline: var(--space-3xs);
+		position: absolute;
+		inset-block-start: 0;
+		color: var(--text-secondary);
+	}
+}
+
 summary {
 	cursor: pointer;
 	touch-action: manipulation;

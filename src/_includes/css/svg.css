@@ -21,7 +21,7 @@
 }
 
 :where(.nav a:hover, .nav [aria-current="page"], .nav
-		[data-state="active"], .back-to-blog:hover)
+		[data-state="active"], .back-to-archive:hover)
 	.circle {
 	--offset: 180px;
 }

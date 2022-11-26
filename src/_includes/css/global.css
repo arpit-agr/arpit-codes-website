@@ -8,8 +8,10 @@
 	--letter-spacing-1: 0.015em;
 	--letter-spacing-2: 0.03em;
 	--line-height: 1.6;
+	--line-height-small: 1.1;
 	--underline-thickness: 0.075em;
 	--underline-offset: calc(2 * var(--underline-thickness));
+	--border-radius: 0.15em;
 	--svg-thickness: 2px;
 
 	--casl: "CASL" 0;
@@ -68,6 +70,7 @@
 	--bg-hover: hsla(0, 0%, 96%);
 	--text: var(--black);
 	--text-secondary: hsla(0, 0%, 1%, 0.8);
+	--text-tertiary: hsla(0, 0%, 86%);
 	--underline-color: var(--text);
 	--border-color: var(--text-secondary);
 	--article-bg: hsl(0deg 0% 99% / 80%);
@@ -80,6 +83,7 @@
 		--bg-hover: hsla(0, 0%, 9%);
 		--text: var(--white);
 		--text-secondary: hsla(0, 0%, 100%, 0.8);
+		--text-tertiary: hsla(0, 0%, 14%);
 		--article-bg: hsl(0deg 0% 1% / 80%);
 		--article-border: hsl(0deg 0% 100% / 10%);
 	}
@@ -148,7 +152,7 @@ h3 {
 	--wght: "wght" 700;
 	font-family: var(--font-special);
 	letter-spacing: var(--letter-spacing--2);
-	line-height: 1.1;
+	line-height: var(--line-height-small);
 }
 
 h1 {
@@ -202,7 +206,7 @@ a:where(:hover, :focus) {
 button {
 	outline: var(--underline-thickness) solid currentColor;
 	border: none;
-	border-radius: var(--underline-thickness);
+	border-radius: var(--border-radius);
 	padding: var(--btn-padding-inline) var(--btn-padding-block);
 	background-color: inherit;
 }

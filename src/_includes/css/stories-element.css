@@ -66,6 +66,7 @@ open-stories::part(dialog) {
 	inline-size: auto;
 	block-size: auto;
 	aspect-ratio: 9/16;
+	margin: auto;
 	padding: 0;
 	border: 0;
 	background: transparent;

@@ -4,6 +4,7 @@ function css(t) {
             display: inline-block;
 					}
 				:host * {
+					margin: 0;
 					font-variation-settings: var(--casl), var(--wght), var(--slnt);
 				}
         ::backdrop {

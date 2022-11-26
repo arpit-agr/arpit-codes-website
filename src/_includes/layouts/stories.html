@@ -10,6 +10,7 @@
   </div>
   {{ content | safe }}
   <div class="flow">
+    <div class="scroll-dir cluster">Scroll direction →</div>
     <ol class="reel" role="list">
       {%- for post in collections.stories -%}
         {%- set imageUrl = "src/images/" + post.data.url -%}

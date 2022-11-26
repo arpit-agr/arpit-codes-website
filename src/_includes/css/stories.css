@@ -43,10 +43,24 @@
 	}
 }
 
+.scroll-dir {
+	margin-block-start: -1em;
+	color: var(--text-secondary);
+	animation: var(--animation-slide) forwards;
+	animation-delay: 2s;
+	text-align: end;
+}
+
+.scroll-dir:before {
+	content: "";
+	flex-grow: 999;
+	border-block-start: var(--hr-thickness) dotted currentColor;
+	/* block-size: var(--hr-thickness); */
+	/* background-color: var(--text-secondary); */
+}
+
 .layout-stories .reel > * + * {
 	margin-inline-start: var(--space-l-xl);
-	/* padding-inline-start: var(--gutter);
-	border-inline-start: var(--underline-thickness) dotted var(--article-border); */
 }
 
 .layout-stories .story-container img {

@@ -13,6 +13,7 @@
 	--underline-thickness: 0.075em;
 	--underline-offset: calc(2 * var(--underline-thickness));
 	--border-radius: 0.15em;
+	--hr-thickness: calc(var(--step--2) * 0.075);
 	--svg-thickness: 2px;
 
 	--casl: "CASL" 0;
@@ -54,6 +55,8 @@
 	--img-rotate: 0deg;
 	--ease-1: cubic-bezier(0.25, 0, 0.5, 1);
 	--ease-2: cubic-bezier(0.66, 0, 0.2, 1);
+	--ease-out-3: cubic-bezier(0, 0, 0.3, 1);
+	--animation-slide: slide 2s ease-out 5;
 }
 
 @supports (min-block-size: 100svh) {
@@ -278,7 +281,6 @@ sup a {
 }
 
 hr {
-	--hr-thickness: calc(var(--step--2) * 0.075);
 	border: none;
 	border-block-start: var(--hr-thickness) solid currentColor;
 	margin-inline-start: 0;

@@ -10,3 +10,9 @@
 		stroke-dashoffset: 0;
 	}
 }
+
+@keyframes slide {
+	50% {
+		transform: translateX(1ch);
+	}
+}

@@ -160,8 +160,10 @@ h1 {
 	font-size: var(--step-4);
 }
 
-.header h1 {
-	line-height: 0.8;
+@supports (selector(:has(works))) {
+	.header:has(.page-desc) h1 {
+		line-height: 0.8;
+	}
 }
 
 h2 {
@@ -237,6 +239,7 @@ button {
 }
 
 summary {
+	--wght: "wght" 700;
 	cursor: pointer;
 	touch-action: manipulation;
 }
@@ -275,7 +278,7 @@ time {
 }
 
 img {
-	transform: rotate(var(--img-rotate));
+	height: auto;
 }
 
 strong {

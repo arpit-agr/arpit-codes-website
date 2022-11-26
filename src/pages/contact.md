@@ -19,7 +19,6 @@ socials:
       text: "Mastodon",
       url: "https://indieweb.social/@arpit",
       icon: "snippets/mastodon.html",
-      rel: "me",
     },
   ]
 displayOrder: 5

@@ -39,7 +39,6 @@
 
 .step--1 {
 	font-size: var(--step--1);
-	text-transform: uppercase;
 	letter-spacing: var(--letter-spacing-2);
 }
 

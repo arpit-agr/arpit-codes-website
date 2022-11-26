@@ -140,7 +140,6 @@ main {
 
 .page-desc {
 	--flow-space: 0.1em;
-	font-size: var(--step--1);
 }
 
 .page-desc li:before {

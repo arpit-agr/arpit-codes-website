@@ -1,25 +1,14 @@
-# 11TY-STARTER
+# Personal website of Arpit Agrawal
 
-A starter repository to build a website with the [Eleventy](https://github.com/11ty/eleventy) static site generator.
+- Built using modern HTML, CSS and vanilla JS
+- Built with [Eleventy](https://github.com/11ty/eleventy), the static site generator.
+- Hosted on [Netlify](https://www.netlify.com/)
 
-## Getting Started
+## [Stories](https://arpit.codes/photos)
 
-### 1. Clone this Repository
+- Built with [OpenStories](https://github.com/dddddddddzzzz/OpenStories).
 
-```
-git clone git@github.com:arpit-agr/11ty-starter.git my-blog-name
-```
+## Squoosh settings
 
-### 2. Navigate to the directory
-
-```
-cd my-blog-name
-```
-
-Specifically have a look at `.eleventy.js` to see if you want to configure any Eleventy options differently.
-
-### 3. Install dependencies
-
-```
-npm install
-```
+- Image height: 1280px
+- Quality: 85

@@ -10,6 +10,7 @@
   </div>
   {{ content | safe }}
   <div class="flow">
+    <!-- TODO: stop scroll dir animation on interaction -->
     <div class="scroll-dir cluster">Scroll direction →</div>
     <ol class="reel" role="list">
       {%- for post in collections.stories -%}

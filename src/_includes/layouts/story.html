@@ -10,6 +10,7 @@
     <h1 class="title">{{ title | title }}</h1>
     <div class="flow">
       {% image imageUrl , alt, sizes, loading, class, fetchPriority %}
+      <!-- TODO: fix fetchPriority -->
       <div class="metadata flow">
         <time class="publish-date" datetime={{ date | dump | safe }}>
           {{ date | postDate }}

@@ -3,26 +3,17 @@
 {%- block content -%}
   <div class="header cluster">
     <h1>{{ title }}</h1>
-    <!-- <ul class="page-desc flow" role="list">
-      {%- for item in description -%}
-        <li>
-          {{ item | safe }}
-        </li>
-      {%- endfor -%}
-    </ul> -->
   </div>
   <article class="flow">
     {{ content | safe }}
-    <h2>Stories</h2>
     <open-stories
-      src="/nature-stories.json"
+      src="/stories.json"
       duration="15"
     >
-      nature
-      <span>× {{ collections.nature | length }}</span>
+      stories
+      <span>× {{ collections.stories | length }}</span>
     </open-stories>
-    <!-- <hr>
-    <h2>Photos</h2> -->
+    <a class="stories-archive-link" href="/stories">View Stories Archive</a>
   </article>
 {%- endblock -%}
 

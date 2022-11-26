@@ -33,9 +33,6 @@
 
 .story-container .metadata {
 	--flow-space: var(--space-3xs-2xs);
-	--cluster-horizontal-alignment: start;
-	--cluster-vertical-alignment: baseline;
-	--cluster-gap: var(--space-3xs-2xs);
 }
 
 @media (min-width: 60em) {
@@ -57,6 +54,17 @@
 .layout-stories .story-container img {
 	max-block-size: calc(var(--min-block-size) - (2 * var(--gutter)));
 	inline-size: auto;
+}
+
+.layout-stories .metadata {
+	--cluster-horizontal-alignment: start;
+	--cluster-vertical-alignment: baseline;
+	--cluster-gap: var(--space-3xs-2xs);
+	position: relative;
+}
+
+.layout-story .metadata > * {
+	--flow-space: 1em;
 }
 
 /* scroll-snap */

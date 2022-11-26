@@ -8,11 +8,14 @@
   {%- set imageUrl = "src/images/" + url -%}
   <div class="story-container cluster">
     <h1 class="title">{{ title | title }}</h1>
-    <div>
+    <div class="flow">
       {% image imageUrl , alt, sizes, loading, class, fetchPriority %}
-      <time class="publish-date" datetime={{ date | dump | safe }}>
-        {{ date | postDate }}
-      </time>
+      <div class="metadata flow">
+        <time class="publish-date" datetime={{ date | dump | safe }}>
+          {{ date | postDate }}
+        </time>
+        {{ content | safe }}
+      </div>
     </div>
   </div>
   <a class="back-to-archive btn" href={{ backToArchive.url }}>

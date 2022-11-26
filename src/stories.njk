@@ -2,11 +2,11 @@
 permalink: stories.json
 eleventyExcludeFromCollections: true
 metadata:
-  title: "My favorite shots"
-  subtitle: "A feed of my favorite shots"
+  title: "My stories"
+  subtitle: "A feed of my Instagram-like stories"
   language: en
   author:
-    name: "Arpit"
+    name: "Arpit Agrawal"
     url: "https://arpit.codes/"
 ---
 {%- set siteUrl =  site.url -%}
@@ -30,20 +30,21 @@ metadata:
 	},
   "items": [
     {%- for post in collections.stories | reverse %}
-    {%- set id = post.url -%}
-		{%- set postUrl = "/images/" + post.data.url -%}
-    {%- set absolutePostUrl = postUrl | absoluteUrl(siteUrl) %}
+    {%- set id = post.date | isoDate + "-" + post.fileSlug | slugify -%}
+		{%- set imgUrl = "/images/" + post.data.url -%}
+    {%- set absoluteImgUrl = imgUrl | absoluteUrl(siteUrl) %}
+    {%- set absolutePostUrl = post.url | absoluteUrl(siteUrl) %}
     {
       "id": "{{ id }}",
       "url": "{{ absolutePostUrl }}",
-      "title": "{{ post.data.caption }}",
-      "content_html": "<img src='{{ absolutePostUrl }}' alt='{{ post.data.alt }}'>",
+      "title": "{{ post.data.title | title }}",
+      "content_html": "<img src='{{ absoluteImgUrl }}' alt='{{ post.data.alt }}'>",
       "date_published": "{{ post.date | toISO }}",
       "_open_stories": {
 				"type": "image",
 				"mime_type": "image/jpg",
-				"url": "{{ absolutePostUrl }}",
-				"caption": "{{ post.data.caption }}",
+				"url": "{{ absoluteImgUrl }}",
+				"caption": {% if post.templateContent %}{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) | dump | safe }}{% else %}""{% endif %},
 				"alt": "{{ post.data.alt }}",
         "date_expired": "{{ post.date | nextDay }}"
 			}

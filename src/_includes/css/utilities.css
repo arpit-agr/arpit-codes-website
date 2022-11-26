@@ -8,17 +8,17 @@
 .vh {
 	border: 0;
 	clip: rect(0 0 0 0);
-	height: auto;
+	block-size: auto;
 	margin: 0;
 	overflow: hidden;
 	padding: 0;
 	position: absolute;
-	width: 1px;
+	inline-size: 1px;
 	white-space: nowrap;
 }
 
 .flow > * + * {
-	margin-top: var(--flow-space, 1em);
+	margin-block-start: var(--flow-space, 1em);
 }
 
 :where(.cluster) {

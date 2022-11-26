@@ -1,6 +1,13 @@
 footer {
 	--flow-space: 0;
-	padding-block: var(--space-2xs-xs);
+	--cluster-horizontal-alignment: space-between;
+	--footer-padding-block: var(--space-2xs-xs);
+	position: relative;
+	margin-block-end: calc(
+		-1 * ((var(--step--2) * var(--line-height)) +
+					(2 * var(--footer-padding-block)) + var(--underline-thickness))
+	);
+	padding-block: var(--footer-padding-block);
 	border-block-start: var(--underline-thickness) dotted;
 	color: var(--text-secondary);
 }

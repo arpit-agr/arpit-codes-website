@@ -47,7 +47,6 @@ function css(t) {
 					width: 100%;
 					position: absolute;
 					background: var(--black);
-					border-radius: var(--step--1);
         }
         #images img {
 					position: absolute;
@@ -567,7 +566,7 @@ class OpenStoriesElement extends HTMLElement {
 		(this.metadataDetails.hidden = !n),
 			(this.meta.textContent = n || ""),
 			this.prepareHeart(),
-			(this.link.href = `#${e.id}`),
+			(this.link.href = `${e.id}`),
 			this.currentIndex > this.count - 1 && (this.currentIndex = 0),
 			(this.timer = window.setTimeout(
 				this.goTo.bind(this),

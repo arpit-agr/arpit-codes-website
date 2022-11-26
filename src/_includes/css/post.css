@@ -9,7 +9,7 @@
 	--stack-vertical-alignment: flex-start;
 }
 
-.layout-post :where(p, hr) {
+.layout-post p {
 	max-inline-size: unset;
 }
 

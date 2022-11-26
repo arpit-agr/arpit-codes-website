@@ -16,6 +16,10 @@
 	line-height: 0;
 }
 
+.layout-home hr {
+	max-inline-size: var(--line-length);
+}
+
 .wordmark {
 	align-self: flex-end;
 	inline-size: 100%;

@@ -3,6 +3,10 @@
 	--stack-vertical-alignment: flex-start;
 }
 
+.layout-contact hr {
+	max-inline-size: var(--line-length);
+}
+
 .socials li {
 	--cluster-gap: 0.5ch;
 }

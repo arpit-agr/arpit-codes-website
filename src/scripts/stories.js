@@ -281,7 +281,7 @@ function css(t) {
 					inset-inline-end: calc(-1 * var(--space-xl));
 					text-align: end;
         }
-        @media (max-inline-size: 420px), screen and (orientation: portrait) {
+        @media (max-width: 420px), screen and (orientation: portrait) {
             #controls #close {
                 display: inline-flex;
             }

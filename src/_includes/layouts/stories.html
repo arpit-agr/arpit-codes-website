@@ -9,56 +9,38 @@
     <h1>{{ title }}</h1>
   </div>
   {{ content | safe }}
-  <div class="flow">
-    <!-- TODO: stop scroll dir animation on interaction -->
-    <div class="scroll-dir cluster">Scroll direction →</div>
-    <ol class="reel" role="list">
-      {%- for post in collections.stories -%}
-        {%- set imageUrl = "src/images/" + post.data.url -%}
-        {%- set alt = post.data.alt -%}
-        {%- set sizes = post.data.sizes -%}
-        {%- set loading = post.data.loading -%}
-        {%- set class = post.data.class -%}
-        {%- set fetchPriority = post.data.fetchPriority -%}
-        <!-- TODO: fix fetchPriority -->
-        <li>
-          <div class="story-container cluster">
-            <h2 class="title">{{ post.data.title | title }}</h2>
-            <div class="flow">
-              {% image imageUrl , alt, sizes, loading, class, fetchPriority %}
-              <div class="metadata cluster">
-                <time
-                  class="publish-date"
-                  datetime={{ post.data.date | dump | safe }}
-                  >
-                  {{ post.data.date | postDate }}
-                </time>
-                <span aria-hidden="true">/</span>
-                <a class="step--1" href="{{ post.url }}">
-                  <span>Know more</span>
-                  <span class="vh">about {{ post.data.title }}</span>
-                </a>
-              </div>
+  <ol class="reel" role="list">
+    {%- for post in collections.stories -%}
+      {%- set imageUrl = "src/images/" + post.data.url -%}
+      {%- set alt = post.data.alt -%}
+      {%- set sizes = post.data.sizes -%}
+      {%- set loading = post.data.loading -%}
+      {%- set class = post.data.class -%}
+      {%- set fetchPriority = post.data.fetchPriority -%}
+      <!-- TODO: fix fetchPriority -->
+      <li>
+        <div class="story-container cluster">
+          <h2 class="title">{{ post.data.title | title }}</h2>
+          <div class="flow">
+            {% image imageUrl , alt, sizes, loading, class, fetchPriority %}
+            <div class="metadata cluster">
+              <time
+                class="publish-date"
+                datetime={{ post.data.date | dump | safe }}
+                >
+                {{ post.data.date | postDate }}
+              </time>
+              <span aria-hidden="true">/</span>
+              <a class="step--1" href="{{ post.url }}">
+                <span>Know more</span>
+                <span class="vh">about {{ post.data.title }}</span>
+              </a>
             </div>
           </div>
-        </li>
-      {%- endfor -%}
-    </ol>
-    <hr>
-    <details class="snap-input flow">
-      <summary>Scroll snap</summary>
-      <div class="flow">
-        <p>{{ scrollSnap.desc | addNbsp | safe }}</p>
-        <div class="snap-input cluster">
-          <label for="snap">{{ scrollSnap.label }}</label>
-          <input type="checkbox" id="snap" checked>
         </div>
-        <p class="snap-input-unchecked flow">
-          {{ scrollSnap.unchecked | addNbsp | safe }}
-        </p>
-      </div>
-    </details>
-  </div>
+      </li>
+    {%- endfor -%}
+  </ol>
 {%- endblock -%}
 
 {%- block bodyScripts -%}

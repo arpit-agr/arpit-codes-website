@@ -43,7 +43,7 @@
 	}
 }
 
-.scroll-dir {
+/* .scroll-dir {
 	margin-block-start: -1em;
 	color: var(--text-secondary);
 	animation: var(--animation-slide) forwards;
@@ -55,16 +55,43 @@
 	content: "";
 	flex-grow: 999;
 	border-block-start: var(--hr-thickness) dotted currentColor;
-	/* block-size: var(--hr-thickness); */
-	/* background-color: var(--text-secondary); */
+} */
+
+.layout-stories .reel {
+	gap: var(--space-l-xl);
+	flex-wrap: wrap;
+}
+
+@media (min-width: 45em) {
+	.layout-stories .reel {
+		flex-wrap: nowrap;
+		scroll-snap-type: x mandatory;
+	}
+
+	.layout-stories .reel.overflowing {
+		padding-block-end: var(--space-s-m);
+	}
+
+	.layout-stories .reel > * {
+		scroll-snap-align: start;
+	}
+
+	.layout-stories .story-container {
+		max-inline-size: calc(
+			100vw - (2 * var(--gutter)) - (2 * var(--space-l-xl))
+		);
+	}
 }
 
 .layout-stories .reel > * + * {
-	margin-inline-start: var(--space-l-xl);
+	margin-inline-start: unset;
 }
 
 .layout-stories .story-container img {
-	max-block-size: calc(var(--min-block-size) - (2 * var(--gutter)));
+	max-block-size: calc(
+		var(--min-block-size) - (2 * var(--gutter)) - var(--space-3xs-2xs) -
+			(var(--step--1) * var(--line-height))
+	);
 	inline-size: auto;
 }
 
@@ -77,49 +104,4 @@
 
 .layout-story .metadata > * {
 	--flow-space: 1em;
-}
-
-/* scroll-snap */
-
-.layout-stories hr,
-.snap-details,
-.snap-input-unchecked {
-	display: none;
-}
-
-@supports (selector(:has(works))) {
-	.layout-stories hr {
-		--flow-space: var(--space-xl-2xl);
-		display: inherit;
-		border-block-start-style: dotted;
-		border-block-start-color: var(--text-secondary);
-	}
-
-	.snap-details {
-		display: unset;
-	}
-
-	.snap-input {
-		--cluster-gap: 0.5em;
-		--flow-space: var(--gutter);
-	}
-
-	.layout-stories input {
-		margin: 0;
-		inline-size: var(--step-1);
-		block-size: var(--step-1);
-		border-radius: var(--border-radius);
-	}
-
-	body:has(input[id="snap"]:checked) .reel {
-		scroll-snap-type: x mandatory;
-	}
-
-	body:has(input[id="snap"]:checked) .reel > * {
-		scroll-snap-align: end;
-	}
-
-	body:has(input[id="snap"]:not(:checked)) .snap-input-unchecked {
-		display: inherit;
-	}
 }

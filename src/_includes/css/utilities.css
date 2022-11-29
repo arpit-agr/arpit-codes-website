@@ -48,8 +48,16 @@
 	letter-spacing: var(--letter-spacing-2);
 }
 
-.font-weight\:500 {
-	font-weight: 500;
+.fw\:500 {
+	--wght: "wght" 500;
+}
+
+.fw\:700 {
+	--wght: "wght" 700;
+}
+
+.text-secondary {
+	color: var(--text-secondary);
 }
 
 /* reel start */
@@ -100,3 +108,21 @@
 }
 
 /* reel end */
+
+/* grid start */
+
+.grid {
+	display: grid;
+	grid-gap: var(--grid-gap, 1rem);
+}
+
+@supports (width: min(250px, 100%)) {
+	.grid {
+		grid-template-columns: repeat(
+			var(--grid-repeat-pattern, auto-fit),
+			minmax(min(var(--min-grid-size, 250px), 100%), 1fr)
+		);
+	}
+}
+
+/* grid end */

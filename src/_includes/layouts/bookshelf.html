@@ -1,0 +1,44 @@
+{%- extends "layouts/base.html" -%}
+
+{%- block content -%}
+  <div class="header">
+    <h1>{{ title }}</h1>
+  </div>
+  {{ content | safe }}
+  <ul class="bookshelf grid" role="list">
+    {%- for post in collections.bookshelf -%}
+      {%- set imageUrl = "src/images/" + post.data.url -%}
+      {%- set alt = post.data.alt -%}
+      {%- set sizes = post.data.sizes -%}
+      {%- set loading = post.data.loading -%}
+      {%- set class = post.data.class -%}
+      <!-- TODO: fix fetchPriority -->
+      {%- set fetchPriority = post.data.fetchPriority -%}
+      <li class="book-conatiner">
+        <div class="book">
+          <div class="front">
+            <div class="cover">
+              {% image imageUrl , alt, sizes, loading, class, fetchPriority %}
+            </div>
+          </div>
+          <div class="spine">
+            <p aria-hidden="true">{{ post.data.title }}</p>
+          </div>
+        </div>
+        <div class="book-info flow">
+          <h2 class="title">{{ post.data.title }}</h2>
+          {% if post.data.subtitle %}
+            <p class="subtitle step--1 text-secondary">
+              {{ post.data.subtitle | addNbsp | safe }}
+            </p>
+          {% endif %}
+          <hr>
+          <p class="author">
+            <span class="step--1 text-secondary">by</span>
+            <span>{{ post.data.author }}</span>
+          </p>
+        </div>
+      </li>
+    {%- endfor -%}
+  </ul>
+{%- endblock -%}

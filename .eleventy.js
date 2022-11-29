@@ -109,6 +109,9 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("stories", function(collectionApi) {
     return collectionApi.getFilteredByGlob("./src/stories/*.md");
   });
+  eleventyConfig.addCollection("bookshelf", function(collectionApi) {
+		return sortByDisplayOrder(collectionApi.getFilteredByGlob("./src/bookshelf/*.md"));
+  });
 
   //Markdown
   let markdownIt = require("markdown-it");

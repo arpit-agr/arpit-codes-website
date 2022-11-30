@@ -32,7 +32,7 @@
           <h2 class="title">{{ post.data.title }}</h2>
           {% if post.data.subtitle %}
             <p class="subtitle step--1 text-secondary">
-              {{ post.data.subtitle | addNbsp | safe }}
+              {{ post.data.subtitle | title | addNbsp | safe }}
             </p>
           {% endif %}
           <hr>

@@ -14,16 +14,19 @@
       {%- set class = post.data.class -%}
       <!-- TODO: fix fetchPriority -->
       {%- set fetchPriority = post.data.fetchPriority -%}
-      <li class="book-conatiner">
+      <li 
+        class="book-container" 
+        {% if post.data.spineColor %}
+          style="--spine-color: {{ post.data.spineColor }}"
+        {% endif %}
+      >
         <div class="book">
           <div class="front">
             <div class="cover">
               {% image imageUrl , alt, sizes, loading, class, fetchPriority %}
             </div>
           </div>
-          <div class="spine">
-            <p aria-hidden="true">{{ post.data.title }}</p>
-          </div>
+          <div class="spine"></div>
         </div>
         <div class="book-info flow">
           <h2 class="title">{{ post.data.title }}</h2>
@@ -35,7 +38,7 @@
           <hr>
           <p class="author">
             <span class="step--1 text-secondary">by</span>
-            <span>{{ post.data.author }}</span>
+            <span>{{ post.data.author | addNbsp | safe }}</span>
           </p>
         </div>
       </li>

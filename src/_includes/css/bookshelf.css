@@ -1,19 +1,19 @@
 .bookshelf {
 	--grid-repeat-pattern: auto-fill;
 	--min-grid-size: 27ch;
-	--grid-gap: var(--space-2xl-3xl);
+	--grid-gap: var(--space-xl-2xl) var(--space-2xl-3xl);
 	align-items: start;
 }
 
-.book-conatiner {
-	--cover-width: 10em;
+.book-container {
+	--cover-width: var(--space-3xl-4xl);
 	--spine-width: calc(0.125 * var(--cover-width));
 	/* could the spine width be dynamic 
 	based on the number of pages in the book */
 
 	display: grid;
 	gap: 1em;
-	grid-template-columns: auto 1fr;
+	grid-template-columns: var(--cover-width) 1fr;
 	align-items: start;
 	perspective: 1800px;
 }
@@ -58,7 +58,7 @@
 	inline-size: var(--space-5xs);
 
 	/* TODO: make bg color dynamic */
-	background-color: hsl(21deg 96% 48%);
+	background-color: var(--spine-color, hsl(0deg 1% 15%));
 }
 
 .cover {
@@ -71,7 +71,7 @@
 }
 
 .cover img {
-	inline-size: var(--cover-width);
+	/* inline-size: var(--cover-width); */
 	block-size: auto;
 	max-inline-size: 100%;
 	border-radius: 0 var(--space-4xs) var(--space-4xs) 0;
@@ -99,21 +99,17 @@
 	inset-inline-start: calc(-0.5 * var(--spine-width));
 	inline-size: var(--spine-width);
 
+	border-radius: var(--space-4xs) 0 0 var(--space-4xs);
 	transform: rotate3d(0, 1, 0, -90deg);
 
 	/* TODO: make bg dynamic */
-	background-color: hsl(0deg 1% 15%);
-}
-
-.spine p {
-	--wght: "wght" 700;
-	text-transform: uppercase;
-	writing-mode: vertical-lr;
-	color: var(--white);
-	font-size: calc(0.33 * var(--spine-width));
-	letter-spacing: var(--letter-spacing-2);
+	background-color: var(--spine-color, hsl(0deg 1% 15%));
 }
 
 .book-info {
 	--flow-space: 0.5em;
+}
+
+.book-info h2 {
+	font-size: var(--step-1);
 }

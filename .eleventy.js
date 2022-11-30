@@ -110,7 +110,16 @@ module.exports = function(eleventyConfig) {
     return collectionApi.getFilteredByGlob("./src/stories/*.md");
   });
   eleventyConfig.addCollection("bookshelf", function(collectionApi) {
-		return sortByDisplayOrder(collectionApi.getFilteredByGlob("./src/bookshelf/*.md"));
+    if(process.env.NODE_ENV === "production") {
+      return collectionApi
+        .getFilteredByGlob("./src/bookshelf/*.md")
+        .sort(() => {
+          return 0.5 - Math.random();
+        });
+    }
+    else {
+      return collectionApi.getFilteredByGlob("./src/bookshelf/*.md");
+    }
   });
 
   //Markdown

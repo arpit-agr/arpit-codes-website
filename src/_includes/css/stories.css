@@ -35,13 +35,13 @@
 	--flow-space: var(--space-3xs-2xs);
 }
 
-@media (min-width: 60em) {
+/* @media (min-width: 60em) {
 	.layout-stories h1 {
 		font-size: var(--step-1);
 		letter-spacing: unset;
 		color: var(--text-secondary);
 	}
-}
+} */
 
 .layout-stories .reel {
 	gap: var(--space-l-xl);

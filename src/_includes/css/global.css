@@ -179,7 +179,7 @@ h1 {
 }
 
 @supports (selector(:has(works))) {
-	.header:has(.page-desc) h1 {
+	.header:has(h1 + *) h1 {
 		line-height: 0.8;
 	}
 }

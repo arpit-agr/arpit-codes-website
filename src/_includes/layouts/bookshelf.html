@@ -1,8 +1,9 @@
 {%- extends "layouts/base.html" -%}
 
 {%- block content -%}
-  <div class="header">
+  <div class="header cluster">
     <h1>{{ title }}</h1>
+    <p class="">({{ collections.bookshelf | length }})</p>
   </div>
   {{ content | safe }}
   <ul class="bookshelf grid" role="list">
@@ -29,7 +30,7 @@
           <div class="spine"></div>
         </div>
         <div class="book-info flow">
-          <h2 class="title">{{ post.data.title }}</h2>
+          <h2 class="title">{{ post.data.title | title }}</h2>
           {% if post.data.subtitle %}
             <p class="subtitle step--1 text-secondary">
               {{ post.data.subtitle | title | addNbsp | safe }}

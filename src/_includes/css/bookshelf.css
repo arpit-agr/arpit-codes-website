@@ -1,3 +1,7 @@
+.layout-bookshelf .header {
+	--cluster-gap: 1ch;
+}
+
 .bookshelf {
 	--grid-repeat-pattern: auto-fill;
 	--min-grid-size: 27ch;
@@ -43,6 +47,7 @@
 .front {
 	display: block;
 	position: relative;
+	border-radius: 0 var(--space-4xs) var(--space-4xs) 0;
 	transform-style: preserve-3d;
 	transform-origin: 0% 50%;
 	transform: translate3d(0, 0, calc(0.5 * var(--spine-width)));

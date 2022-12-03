@@ -95,7 +95,7 @@ module.exports = function(eleventyConfig) {
 
   // Collections
 	eleventyConfig.addCollection("pages", function(collectionApi) {
-		return sortByDisplayOrder(collectionApi.getFilteredByGlob("./src/pages/*.md"));
+		return collectionApi.getFilteredByGlob("./src/pages/*.md");
 	});
   eleventyConfig.addCollection("projects", function(collectionApi) {
 		return sortByDisplayOrder(collectionApi.getFilteredByGlob("./src/projects/*.md"));

@@ -2,8 +2,8 @@
 title: "Projects"
 description:
   - "more to come"
-displayOrder: 2
 eleventyNavigation:
   key: "Projects"
+  order: 2
 layout: "layouts/projects.html"
 ---

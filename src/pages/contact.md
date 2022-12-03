@@ -21,9 +21,9 @@ socials:
       icon: "snippets/mastodon.html",
     },
   ]
-displayOrder: 5
 eleventyNavigation:
   key: "Contact"
+  order: 5
 layout: "layouts/contact.html"
 ---
 

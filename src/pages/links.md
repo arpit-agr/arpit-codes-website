@@ -3,8 +3,8 @@ title: "Links"
 description:
   - "handpicked by me"
   - "worth sharing with you"
-displayOrder: 4
 eleventyNavigation:
   key: "Links"
+  order: 4
 layout: "layouts/links.html"
 ---

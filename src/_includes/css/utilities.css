@@ -42,6 +42,10 @@
 	letter-spacing: var(--letter-spacing-2);
 }
 
+.uppercase {
+	text-transform: uppercase;
+}
+
 .step--2 {
 	font-size: var(--step--2);
 	text-transform: uppercase;

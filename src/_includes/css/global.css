@@ -147,13 +147,7 @@ main {
 
 @media (min-width: 60em) {
 	main {
-		--stack-vertical-alignment: flex-end;
-	}
-
-	.header {
-		position: absolute;
-		inset-block-start: var(--gutter);
-		inset-inline-start: var(--gutter);
+		margin-block-start: var(--gutter);
 	}
 }
 

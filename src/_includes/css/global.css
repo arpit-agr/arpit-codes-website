@@ -10,6 +10,7 @@
 	--line-height: 1.6;
 	--line-height-medium: 1.3;
 	--line-height-small: 1.1;
+	--line-height-extra-small: 0.8;
 	--line-length: 50ch;
 	--underline-thickness: 0.075em;
 	--underline-offset: calc(2 * var(--underline-thickness));
@@ -170,12 +171,6 @@ h1 {
 	font-size: var(--step-4);
 	line-height: var(--line-height-small);
 	letter-spacing: var(--letter-spacing--2);
-}
-
-@supports (selector(:has(works))) {
-	.header:has(h1 + *) h1 {
-		line-height: 0.8;
-	}
 }
 
 h2,

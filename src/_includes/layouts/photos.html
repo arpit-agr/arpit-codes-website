@@ -1,5 +1,9 @@
 {%- extends "layouts/base.html" -%}
 
+{%- block preload -%}
+  <link rel="preload" as="script" href="/scripts/stories.js">
+{%- endblock -%}
+
 {%- block content -%}
   <div class="header">
     <h1 class="line-height-xs">{{ title }}</h1>
@@ -19,8 +23,9 @@
 
 {%- block bodyScripts -%}
   <script
-  src="/scripts/stories.js"
-  type="module"
-  defer
+    src="/scripts/stories.js"
+    type="module"
+    defer
+    fetchpriority="high"
   ></script>
 {%- endblock -%}

@@ -11,10 +11,14 @@
       {%- set imageUrl = "src/images/" + post.data.url -%}
       {%- set alt = post.data.alt -%}
       {%- set sizes = post.data.sizes -%}
-      {%- set loading = post.data.loading -%}
       {%- set class = post.data.class -%}
-      <!-- TODO: fix fetchPriority -->
-      {%- set fetchPriority = post.data.fetchPriority -%}
+      {% if loop.index <= 9 %}
+        {%- set loading = "eager" -%}
+        {%- set fetchPriority = "high" -%}
+      {% else %}
+        {%- set loading = "lazy" -%}
+        {%- set fetchPriority = "low" -%}
+      {% endif %}
       <li 
         class="book-container" 
         {% if post.data.spineColor %}

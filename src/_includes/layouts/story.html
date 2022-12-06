@@ -9,8 +9,7 @@
   <div class="story-container cluster">
     <h1 class="title">{{ title | title }}</h1>
     <div class="flow">
-      {% image imageUrl , alt, sizes, loading, class, fetchPriority %}
-      <!-- TODO: fix fetchPriority -->
+      {% image imageUrl , alt, sizes, "eager", class, "high" %}
       <div class="metadata flow">
         <time class="publish-date" datetime={{ date | dump | safe }}>
           {{ date | postDate }}

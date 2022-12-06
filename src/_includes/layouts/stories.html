@@ -14,10 +14,14 @@
       {%- set imageUrl = "src/images/" + post.data.url -%}
       {%- set alt = post.data.alt -%}
       {%- set sizes = post.data.sizes -%}
-      {%- set loading = post.data.loading -%}
       {%- set class = post.data.class -%}
-      {%- set fetchPriority = post.data.fetchPriority -%}
-      <!-- TODO: fix fetchPriority -->
+      {% if loop.index <= 4 %}
+        {%- set loading = "eager" -%}
+        {%- set fetchPriority = "high" -%}
+      {% else %}
+        {%- set loading = "lazy" -%}
+        {%- set fetchPriority = "low" -%}
+      {% endif %}
       <li>
         <div class="story-container cluster">
           <h2 class="title">{{ post.data.title | title }}</h2>

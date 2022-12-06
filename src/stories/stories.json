@@ -4,9 +4,7 @@
 		"text": "← All Stories"
 	},
 	"sizes": "90vw",
-	"loading": "eager",
 	"class": "",
-	"fetchPriority": "high",
 	"layout": "layouts/story.html",
 	"permalink": "./stories/{% if customSlug %}{{ customSlug | slugify }}{% else %}{{ title | slugify }}{% endif %}/"
 }

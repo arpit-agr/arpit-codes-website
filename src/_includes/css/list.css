@@ -30,10 +30,6 @@
 	--underline-offset: calc(-0.5 * var(--underline-thickness));
 }
 
-.list li:after {
-	content: "→";
-}
-
 .list li:where(:hover, :focus) {
 	background: radial-gradient(circle at left, var(--bg-hover), transparent);
 }
@@ -47,6 +43,6 @@
 	padding-block: 0 var(--li-padding-block);
 }
 
-.layout-links .list li:after {
+:where(.layout-projects, .layout-links) .list li:after {
 	content: "\2197";
 }

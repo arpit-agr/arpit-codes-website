@@ -126,10 +126,10 @@ body {
 	grid-template-rows: auto 1fr;
 	gap: var(--grid-gap);
 
-	background-image: var(--body-bg);
-	background-repeat: no-repeat no-repeat;
-	background-position: center top;
-	background-size: cover;
+	background-image: var(--pixel-bg);
+	background-repeat: repeat-x;
+	background-position: center bottom;
+	background-size: var(--step-10);
 }
 
 main {
@@ -209,14 +209,6 @@ a:where(:hover, :focus) {
 
 [href*="mailto"] {
 	white-space: nowrap;
-}
-
-[href*="mailto"]:before {
-	content: var(--mail);
-	alt: "";
-	vertical-align: middle;
-	margin-right: 0.5ch;
-	line-height: 1;
 }
 
 button {

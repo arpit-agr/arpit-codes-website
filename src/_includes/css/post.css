@@ -1,6 +1,16 @@
+/*  same as story layout */
 @media (min-width: 30.0625em) {
 	.layout-post .nav ul {
 		--cluster-horizontal-alignment: flex-end;
+	}
+}
+
+@media (min-width: 60em) {
+	.layout-post main {
+		margin-block-start: calc(
+			(2 * var(--gutter)) + (var(--step--1) * var(--line-height)) +
+				var(--gutter)
+		);
 	}
 }
 

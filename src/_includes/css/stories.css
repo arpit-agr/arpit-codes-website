@@ -88,6 +88,27 @@
 	position: relative;
 }
 
+/*  same as post layout */
+@media (min-width: 30.0625em) {
+	.layout-story .nav ul {
+		--cluster-horizontal-alignment: flex-end;
+	}
+}
+
+@media (min-width: 60em) {
+	.layout-story main {
+		margin-block-start: calc(
+			(2 * var(--gutter)) + (var(--step--1) * var(--line-height)) +
+				var(--gutter)
+		);
+	}
+}
+
+.layout-story main {
+	--stack-gap: var(--space-l-xl);
+	--stack-vertical-alignment: flex-start;
+}
+
 .layout-story .metadata > * {
 	--flow-space: 1em;
 }

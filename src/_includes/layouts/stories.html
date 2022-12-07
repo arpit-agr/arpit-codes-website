@@ -27,7 +27,7 @@
         {%- set fetchPriority = "low" -%}
       {% endif %}
       <li>
-        <div class="story-container cluster">
+        <article class="story-container cluster">
           <h2 class="title">{{ post.data.title | title }}</h2>
           <div class="flow">
             {% image imageUrl , alt, sizes, loading, class, fetchPriority %}
@@ -45,7 +45,7 @@
               </a>
             </div>
           </div>
-        </div>
+        </article>
       </li>
     {%- endfor -%}
   </ol>

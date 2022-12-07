@@ -6,7 +6,7 @@
 
 {%- block content -%}
   {%- set imageUrl = "src/images/" + url -%}
-  <div class="story-container cluster">
+  <article class="story-container cluster">
     <h1 class="title">{{ title | title }}</h1>
     <div class="flow">
       {% image imageUrl , alt, sizes, "eager", class, "high" %}
@@ -17,7 +17,7 @@
         {{ content | safe }}
       </div>
     </div>
-  </div>
+  </article>
   <a class="back-to-archive btn step--1 uppercase" href={{ backToArchive.url }}>
     {{ backToArchive.text }}
     {% include "snippets/circle.html" %}

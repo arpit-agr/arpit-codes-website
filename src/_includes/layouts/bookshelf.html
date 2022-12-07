@@ -19,33 +19,35 @@
         {%- set loading = "lazy" -%}
         {%- set fetchPriority = "low" -%}
       {% endif %}
-      <li 
-        class="book-container" 
-        {% if post.data.spineColor %}
-          style="--spine-color: {{ post.data.spineColor }}"
-        {% endif %}
-      >
-        <div class="book">
-          <div class="front">
-            <div class="cover">
-              {% image imageUrl , alt, sizes, loading, class, fetchPriority %}
-            </div>
-          </div>
-          <div class="spine"></div>
-        </div>
-        <div class="book-info flow">
-          <h2 class="title">{{ post.data.title | title }}</h2>
-          {% if post.data.subtitle %}
-            <p class="subtitle step--1 text-secondary">
-              {{ post.data.subtitle | title | addNbsp | safe }}
-            </p>
+      <li>
+        <article
+          class="book-container" 
+          {% if post.data.spineColor %}
+            style="--spine-color: {{ post.data.spineColor }}"
           {% endif %}
-          <hr>
-          <p class="author">
-            <span class="step--1 text-secondary">by</span>
-            <span>{{ post.data.author | addNbsp | safe }}</span>
-          </p>
-        </div>
+        >
+          <div class="book">
+            <div class="front">
+              <div class="cover">
+                {% image imageUrl , alt, sizes, loading, class, fetchPriority %}
+              </div>
+            </div>
+            <div class="spine"></div>
+          </div>
+          <div class="book-info flow">
+            <h2 class="title">{{ post.data.title | title }}</h2>
+            {% if post.data.subtitle %}
+              <p class="subtitle step--1 text-secondary">
+                {{ post.data.subtitle | title | addNbsp | safe }}
+              </p>
+            {% endif %}
+            <hr>
+            <p class="author">
+              <span class="step--1 text-secondary">by</span>
+              <span>{{ post.data.author | addNbsp | safe }}</span>
+            </p>
+          </div>
+        </article>
       </li>
     {%- endfor -%}
   </ul>

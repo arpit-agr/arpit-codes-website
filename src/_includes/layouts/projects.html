@@ -15,7 +15,7 @@
   <ul class="projects list" role="list">
     {%- for project in collections.projects -%}
       <li>
-        <a href="{{ project.data.url }}">
+        <a class="cluster" href="{{ project.data.url }}">
           {{ project.data.title }}
         </a>
       </li>

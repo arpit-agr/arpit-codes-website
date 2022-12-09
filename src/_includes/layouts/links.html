@@ -16,7 +16,7 @@
   <ol class="links list" role="list" reversed>
     {%- for link in collections.links | reverse -%}
       <li>
-        <a href="{{ link.data.url }}">
+        <a class="cluster" href="{{ link.data.url }}">
           {{ link.data.title | addNbsp | safe }}
         </a>
       </li>

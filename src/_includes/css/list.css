@@ -1,48 +1,63 @@
 .list li {
-	--columns: 1fr min-content;
-	--grid-gap: 0 var(--space-2xs-xs);
 	position: relative;
-	display: grid;
-	gap: var(--grid-gap);
-	grid-template-columns: var(--columns);
-	align-items: baseline;
-}
-
-.list li + li {
-	border-block-start: var(--underline-thickness) solid currentColor;
-	border-color: var(--border-color);
 }
 
 .list a {
+	padding-inline: var(--li-padding-inline);
 	padding-block: var(--li-padding-block);
-	/* padding-inline: var(--li-padding-inline); */
 	text-decoration-line: none;
 	text-transform: capitalize;
-}
-
-.list a:after {
-	content: "";
-	position: absolute;
-	inset: 0;
 }
 
 .list a:focus {
 	--underline-offset: calc(-0.5 * var(--underline-thickness));
 }
 
-.list li:where(:hover, :focus) {
-	background: radial-gradient(circle at left, var(--bg-hover), transparent);
+.list li:before,
+.list li:after {
+	content: "";
+	position: absolute;
+	inset-block-end: 0;
+	display: block;
+	inline-size: 100%;
+	background-color: currentColor;
+	transform-origin: 0 0;
 }
 
-.layout-blog .list li > div {
-	--cluster-gap: var(--grid-gap);
+.list li:before {
+	block-size: 1px;
+}
+
+.list li:after {
+	block-size: 2px;
+	transform: scaleX(0);
+	transition: transform 0.33s ease;
+}
+
+.list li:where(:hover, :focus):after {
+	transform: scaleX(1);
+}
+
+:where(.layout-projects, .layout-links) .list li a {
+	--cluster-horizontal-alignment: space-between;
 	--cluster-vertical-alignment: baseline;
+	flex-wrap: nowrap;
 }
 
-.layout-blog .list li time {
-	padding-block: 0 var(--li-padding-block);
-}
-
-:where(.layout-projects, .layout-links) .list li:after {
+:where(.layout-projects, .layout-links) .list li a:after {
 	content: "\2197";
+}
+
+.layout-blog .list li {
+	--grid-gap: 0 var(--space-xs-s);
+	display: grid;
+	grid-template-columns: 1fr auto;
+	gap: var(--grid-gap);
+	align-items: baseline;
+}
+
+.layout-blog .list li a::after {
+	content: "";
+	position: absolute;
+	inset: 0;
 }

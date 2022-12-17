@@ -140,7 +140,7 @@ main {
 	scroll-margin-block-start: calc(var(--space-l-xl) / 2);
 }
 
-.header {
+.page-header {
 	--cluster-gap: var(--space-m-l) var(--gutter);
 	--cluster-horizontal-alignment: flex-start;
 	--cluster-vertical-alignment: flex-end;

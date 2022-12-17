@@ -4,9 +4,8 @@
 	--stack-horizontal-alignment: flex-start;
 }
 
-.header {
+.layout-home .page-header {
 	order: -1;
-	/* max-inline-size: 47ch; */
 	max-inline-size: 27em;
 	font-size: var(--step-0);
 }

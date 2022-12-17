@@ -1,0 +1,8 @@
+.codetitle {
+	--flow-space: var(--step-0);
+	font-family: var(--font-code);
+}
+
+.codetitle + pre {
+	margin-block-start: 0.25em;
+}

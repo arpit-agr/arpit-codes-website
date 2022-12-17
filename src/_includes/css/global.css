@@ -2,6 +2,7 @@
 :root {
 	--font-plain: "Recursive", sans-serif;
 	--font-special: "Recursive", sans-serif;
+	--font-code: "Recursive", SFMono-Regular, Consolas, Courier, monospace;
 	--letter-spacing--2: -0.06em;
 	--letter-spacing--1: -0.03em;
 	--letter-spacing-0: -0.015em;
@@ -22,11 +23,12 @@
 	--wght: "wght" 400;
 	--slnt: "slnt" 0;
 	--sups: "sups" off;
+	--dlig: "dlig" on;
 }
 
 * {
 	font-variation-settings: var(--casl), var(--wght), var(--slnt);
-	font-feature-settings: var(--sups);
+	font-feature-settings: var(--sups), var(--dlig);
 }
 
 /* @media (prefers-reduced-data: reduce) {
@@ -71,6 +73,7 @@
 :root {
 	--white: hsl(0deg 0% 99%);
 	--black: hsl(0deg 0% 1%);
+	--editor-black: hsl(0deg 0% 12%);
 
 	--bg: var(--white);
 	--bg-hover: hsla(0, 0%, 96%);
@@ -311,4 +314,19 @@ em {
 
 [tabindex="-1"]:focus {
 	outline: none;
+}
+
+pre {
+	max-inline-size: calc(100vw - (2 * var(--gutter)));
+	border-radius: var(--border-radius);
+	overflow-x: auto;
+}
+
+code {
+	display: inline-block;
+	padding-inline: var(--space-3xs);
+	background-color: var(--text-secondary);
+	border-radius: var(--border-radius);
+	color: var(--bg);
+	font-family: var(--font-code);
 }

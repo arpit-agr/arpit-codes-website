@@ -320,6 +320,7 @@ pre {
 	max-inline-size: calc(100vw - (2 * var(--gutter)));
 	border-radius: var(--border-radius);
 	overflow-x: auto;
+	outline: var(--underline-thickness) solid var(--editor-black);
 }
 
 code {
@@ -329,4 +330,8 @@ code {
 	border-radius: var(--border-radius);
 	color: var(--bg);
 	font-family: var(--font-code);
+}
+
+:not(pre) > code {
+	outline: var(--underline-thickness) solid;
 }

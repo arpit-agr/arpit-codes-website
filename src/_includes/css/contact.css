@@ -1,4 +1,5 @@
 .layout-contact main {
+	--line-length: 50ch;
 	--stack-gap: var(--space-l-xl);
 	--stack-vertical-alignment: flex-start;
 }

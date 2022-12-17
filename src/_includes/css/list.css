@@ -1,5 +1,6 @@
 .list li {
 	position: relative;
+	max-inline-size: unset;
 }
 
 .list a {

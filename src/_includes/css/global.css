@@ -335,3 +335,56 @@ code {
 :not(pre) > code {
 	outline: var(--underline-thickness) solid;
 }
+
+blockquote {
+	--quote-padding: 1em;
+	position: relative;
+	padding: var(--quote-padding);
+	background-color: var(--bg-hover);
+	border-radius: var(--border-radius);
+	outline: var(--underline-thickness) solid var(--text);
+}
+
+blockquote > * + * {
+	margin-block-start: var(--flow-space, 1em);
+}
+
+/* additional margin to accomodate for absolutely postioned pseudo content */
+blockquote,
+blockquote + * {
+	--flow-space: 1.5em;
+}
+
+blockquote:not(blockquote blockquote):before,
+blockquote:not(blockquote blockquote):after {
+	position: absolute;
+	color: var(--bg);
+	font-size: var(--step-4);
+	line-height: 1;
+
+	-webkit-text-stroke: 1px var(--text);
+	/* filter: drop-shadow(1px 2px 0 var(--text)); */
+}
+
+blockquote:not(blockquote blockquote):before {
+	content: open-quote;
+	inset-block-start: -0.45ex;
+	inset-inline-start: -0.3ch;
+}
+blockquote:not(blockquote blockquote):after {
+	content: close-quote;
+	inset-block-end: -1.32ex;
+	inset-inline-end: -0.25ch;
+}
+
+blockquote blockquote {
+	--flow-space: 1em;
+	--underline-thickness: var(--step--2);
+
+	padding: unset;
+	outline: none;
+	border-radius: unset;
+
+	padding-inline-start: var(--step--1);
+	border-inline-start: var(--underline-thickness) solid var(--text-tertiary);
+}

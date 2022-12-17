@@ -61,20 +61,8 @@ module.exports = function(eleventyConfig) {
 
   //SHORTCODE
   eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
-  eleventyConfig.addPairedShortcode('aside', (content, { id }) => {
-    return `<a href="#${id}" id="${id}ref" class="aside-phrase">${content}</a>`;
-  });
-  eleventyConfig.addPairedShortcode('asideText', (content, { id }) => {
-    return `
-<aside class="aside" id="${id}" aria-labelledby="${id}ref">
-	<details-utils close-esc>
-	<details class="flow">
-    <summary class="font-weight:500">Aside</summary>
-    ${content}
-  </details>
-	</details-utils>
-</aside>
-`;
+  eleventyConfig.addShortcode("codetitle", function(title, heading = "Filename:") {
+		return `<div class="codetitle step--1">${heading} ${title}</div>`;
   });
 
   //Transforms

@@ -19,32 +19,13 @@
 	--stack-vertical-alignment: flex-start;
 }
 
-.layout-post p {
-	max-inline-size: unset;
-}
-
-.article-container {
-	display: grid;
-	grid-template-areas:
-		"title"
-		"date"
-		"content";
-	gap: var(--gutter);
-	align-items: baseline;
-	max-width: min(calc(1.414 * var(--step-10)), 100%);
+.layout-post article {
+	display: block;
+	max-inline-size: 56em;
 	margin-inline: auto;
 }
 
-@media (min-width: 30.0625em) {
-	.article-container {
-		grid-template-areas:
-			"date title"
-			"date content";
-	}
-}
-
-.article-container h1 {
-	grid-area: title;
+.layout-post article h1 {
 	font-size: var(--step-3);
 	font-family: var(--font-plain);
 	font-style: normal;
@@ -53,19 +34,14 @@
 }
 
 .publish-date {
-	grid-area: date;
 	display: block;
 }
 
-.article-body {
-	grid-area: content;
+.publish-date + * {
+	--flow-space: var(--stack-gap);
 }
 
-.article-body > * {
-	--flow-space: 1em;
-}
-
-.article-body li + li {
+.layout-post article li + li {
 	--flow-space: 1ch;
 	margin-block-start: var(--flow-space, 1em);
 }
@@ -77,3 +53,12 @@
 .footnotes-list {
 	padding-inline-start: 1rem;
 }
+
+/* .reading-notes hr,
+.reading-notes hr + * {
+	--flow-space: var(--stack-gap);
+}
+
+.reading-notes:has(blockquote + hr) hr {
+	--flow-space: calc(var(--stack-gap) + 0.5em);
+} */

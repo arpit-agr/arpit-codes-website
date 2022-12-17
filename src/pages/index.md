@@ -15,6 +15,6 @@ Hello, I'm Arpit Agrawal, a [front-of-the-frontend]({{ frontend.url }} "{{ front
 
 ---
 
-I believe in building the right website and building the website right.
+<!-- I believe in building the right website and building the website right. -->
 
 You can contact me at <hello@arpit.codes> if you want to chat about a project. I’d love to hear from you.

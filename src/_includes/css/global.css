@@ -129,10 +129,10 @@ body {
 	grid-template-rows: auto 1fr;
 	gap: var(--grid-gap);
 
-	background-image: var(--pixel-bg);
+	/* background-image: var(--pixel-bg);
 	background-repeat: repeat-x;
 	background-position: center bottom;
-	background-size: var(--step-10);
+	background-size: var(--step-10); */
 }
 
 main {

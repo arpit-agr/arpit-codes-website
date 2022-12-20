@@ -20,8 +20,12 @@
 	stroke-dashoffset: 361px;
 }
 
-:where(.nav a:hover, .nav [aria-current="page"], .nav
-		[data-state="active"], .back-to-archive:hover)
+:where(
+		.nav a:hover,
+		.nav [aria-current="page"],
+		.nav [data-state="active"],
+		.back-to-archive:hover
+	)
 	.circle {
 	--offset: 180px;
 }
@@ -71,4 +75,19 @@
 	.hash {
 		display: block;
 	}
+}
+
+.pixel {
+	position: absolute;
+	inset-inline-start: 0;
+	inset-block-end: 0;
+	inline-size: 100%;
+	block-size: auto;
+	/* inset: 0; */
+	z-index: -1;
+	pointer-events: none;
+}
+
+.pixel path {
+	fill: var(--bg-hover);
 }

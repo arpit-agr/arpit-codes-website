@@ -2,43 +2,40 @@ const directoryOutputPlugin = require("@11ty/eleventy-plugin-directory-output");
 const htmlmin = require("html-minifier");
 const CleanCSS = require("clean-css");
 const imageShortcode = require("./src/_11ty/shortcodes/image");
-const sortByDisplayOrder = require('./src/_11ty/utils/sort-by-display-order.js');
+const sortByDisplayOrder = require("./src/_11ty/utils/sort-by-display-order.js");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const { DateTime } = require("luxon");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
-module.exports = function(eleventyConfig) {
-  eleventyConfig.setQuietMode(true);
+module.exports = function (eleventyConfig) {
+	eleventyConfig.setQuietMode(true);
 
-  //Plugins
-  eleventyConfig.addPlugin(directoryOutputPlugin);
-  eleventyConfig.addPlugin(eleventyNavigationPlugin);
-  eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(syntaxHighlight);
+	//Plugins
+	eleventyConfig.addPlugin(directoryOutputPlugin);
+	eleventyConfig.addPlugin(eleventyNavigationPlugin);
+	eleventyConfig.addPlugin(pluginRss);
+	eleventyConfig.addPlugin(syntaxHighlight);
 
-  //Passthrough copy
-  eleventyConfig.addPassthroughCopy("./src/fonts");
+	//Passthrough copy
+	eleventyConfig.addPassthroughCopy("./src/fonts");
 	eleventyConfig.addPassthroughCopy("./src/images");
-  eleventyConfig.addPassthroughCopy({"./src/favicons": "/"});
+	eleventyConfig.addPassthroughCopy({ "./src/favicons": "/" });
 	eleventyConfig.addPassthroughCopy("./src/manifest.webmanifest");
 	eleventyConfig.addPassthroughCopy("./src/scripts");
 
-  //Watch target
+	//Watch target
 	eleventyConfig.addWatchTarget("./src/_includes/css/");
-	eleventyConfig.addWatchTarget('./src/scripts/');
+	eleventyConfig.addWatchTarget("./src/scripts/");
 
-  //Filter
-  eleventyConfig.addFilter("cssmin", function(code) {
-    if(process.env.NODE_ENV === "production") {
-      return new CleanCSS({}).minify(code).styles;
-    }
-    else {
-      return code
-    }
-  });
-  eleventyConfig.addFilter("postDate", (dateObj) => {
-		return DateTime.fromJSDate(dateObj).setZone("Asia/Calcutta").toLocaleString(DateTime.DATE_MED);
+	//Filter
+	eleventyConfig.addFilter("cssmin", function (code) {
+		if (process.env.NODE_ENV === "production") {
+			return new CleanCSS({}).minify(code).styles;
+		} else {
+			return code;
+		}
+	});
 	});
   eleventyConfig.addFilter("postDateTime", (dateObj) => {
 		return DateTime.fromJSDate(dateObj).setZone("Asia/Calcutta").setLocale('en-IN').toFormat('ff ZZZZ');
@@ -61,11 +58,15 @@ module.exports = function(eleventyConfig) {
     return DateTime.fromJSDate(dateObj).setZone("Asia/Calcutta").plus({ days: 1 });
   });
 
-  //SHORTCODE
-  eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
-  eleventyConfig.addShortcode("codetitle", function(title, heading = "Filename:") {
-		return `<div class="codetitle step--1">${heading} ${title}</div>`;
-	});
+	//SHORTCODE
+	eleventyConfig.addNunjucksAsyncShortcode("image", imageShortcode);
+	eleventyConfig.addShortcode(
+		"codetitle",
+		function (title, heading = "Filename:") {
+			return `<div class="codetitle step--1">${heading} ${title}</div>`;
+		}
+	);
+	eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 
   //Transforms
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
